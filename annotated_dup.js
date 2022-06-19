@@ -9,6 +9,7 @@ var annotated_dup =
       [ "NamespaceType", "structcppcodegen_1_1_namespace_type.html", "structcppcodegen_1_1_namespace_type" ],
       [ "Indent", "structcppcodegen_1_1_indent.html", "structcppcodegen_1_1_indent" ],
       [ "Snippet", "classcppcodegen_1_1_snippet.html", "classcppcodegen_1_1_snippet" ],
-      [ "Block", "classcppcodegen_1_1_block.html", "classcppcodegen_1_1_block" ]
+      [ "Block", "classcppcodegen_1_1_block.html", "classcppcodegen_1_1_block" ],
+      [ "Class", "classcppcodegen_1_1_class.html", "classcppcodegen_1_1_class" ]
     ] ]
 ];

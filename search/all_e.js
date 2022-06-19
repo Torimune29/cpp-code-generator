@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['type_39',['Type',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0a',1,'cppcodegen']]],
-  ['type_5f_40',['type_',['../classcppcodegen_1_1_snippet.html#acb3fa7b4d63d59ef622b3343be627522',1,'cppcodegen::Snippet::type_()'],['../classcppcodegen_1_1_block.html#aacbf50f29485c7aef6ab8329893ae1e7',1,'cppcodegen::Block::type_()']]]
+  ['size_5f_43',['size_',['../structcppcodegen_1_1_indent.html#a6f55f4065abd7e4375c78c9ba2bb98f4',1,'cppcodegen::Indent']]],
+  ['snippet_44',['Snippet',['../classcppcodegen_1_1_snippet.html',1,'cppcodegen::Snippet'],['../classcppcodegen_1_1_snippet.html#a9555deb81c7e9c7a340e54807685f3a8',1,'cppcodegen::Snippet::Snippet(LineType, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_snippet.html#aa19e3f2cf4cec273f6575486212d9508',1,'cppcodegen::Snippet::Snippet(SystemIncludeType, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_snippet.html#af239e51881182f3c4809258d59135ddd',1,'cppcodegen::Snippet::Snippet(LocalIncludeType, const std::string base_dir_path, const Indent &amp;indent=Indent(0, kDefaultIndentSize))']]],
+  ['snippets_5f_45',['snippets_',['../classcppcodegen_1_1_block.html#aec845cc76ffb3e8d419ac2510b931b31',1,'cppcodegen::Block']]],
+  ['system_5finclude_5ft_46',['system_include_t',['../namespacecppcodegen.html#a018d8b324306b2f7ab5c26623d7faf61',1,'cppcodegen']]],
+  ['systemincludetype_47',['SystemIncludeType',['../structcppcodegen_1_1_system_include_type.html',1,'cppcodegen::SystemIncludeType'],['../structcppcodegen_1_1_system_include_type.html#a4fbaaa2b12714f5173951b712baa8711',1,'cppcodegen::SystemIncludeType::SystemIncludeType()'],['../namespacecppcodegen.html#a8992fb01f65360c2a26debc460c618be',1,'cppcodegen::SystemIncludeType()']]]
 ];

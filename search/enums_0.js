@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_95',['Type',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0a',1,'cppcodegen']]]
+  ['accessspecifier_112',['AccessSpecifier',['../namespacecppcodegen.html#ac1003fe6b06e79e4e954d9bb1c19f9ab',1,'cppcodegen']]]
 ];

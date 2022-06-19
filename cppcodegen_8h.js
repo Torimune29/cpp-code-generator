@@ -9,6 +9,7 @@ var cppcodegen_8h =
     [ "Indent", "structcppcodegen_1_1_indent.html", "structcppcodegen_1_1_indent" ],
     [ "Snippet", "classcppcodegen_1_1_snippet.html", "classcppcodegen_1_1_snippet" ],
     [ "Block", "classcppcodegen_1_1_block.html", "classcppcodegen_1_1_block" ],
+    [ "Class", "classcppcodegen_1_1_class.html", "classcppcodegen_1_1_class" ],
     [ "CodeBlockType", "cppcodegen_8h.html#a8c32c115248a792c5c448eb456f26901", null ],
     [ "DefinitionType", "cppcodegen_8h.html#aa44f9cf6e21e46b223e9c596929416f6", null ],
     [ "Indent", "cppcodegen_8h.html#ab2df9a0f163d15bf3b5532e1e4a595a4", null ],
@@ -16,6 +17,11 @@ var cppcodegen_8h =
     [ "LocalIncludeType", "cppcodegen_8h.html#a3ef3505167e86638f562fab09a8191bf", null ],
     [ "NamespaceType", "cppcodegen_8h.html#aab3c69e841eba3051cc088ec2e30a10d", null ],
     [ "SystemIncludeType", "cppcodegen_8h.html#a8992fb01f65360c2a26debc460c618be", null ],
+    [ "AccessSpecifier", "cppcodegen_8h.html#ac1003fe6b06e79e4e954d9bb1c19f9ab", [
+      [ "kPublic", "cppcodegen_8h.html#ac1003fe6b06e79e4e954d9bb1c19f9aba8576a54b49c65252099050c24aa98095", null ],
+      [ "kProtected", "cppcodegen_8h.html#ac1003fe6b06e79e4e954d9bb1c19f9aba29b22e010bf2edfbf57a7a03522a64c9", null ],
+      [ "kPrivate", "cppcodegen_8h.html#ac1003fe6b06e79e4e954d9bb1c19f9aba23f56d95d0068609bb9b60b62af3a054", null ]
+    ] ],
     [ "Type", "cppcodegen_8h.html#a366db303fbd794f24098f82f3a154f0a", [
       [ "kLine", "cppcodegen_8h.html#a366db303fbd794f24098f82f3a154f0aaee669fa7b5a35d96a396d4ed648afb45", null ],
       [ "kSystemInclude", "cppcodegen_8h.html#a366db303fbd794f24098f82f3a154f0aaa671df9bc7851a92318b2abc01f39262", null ],
