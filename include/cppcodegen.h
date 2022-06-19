@@ -56,12 +56,32 @@ typedef struct Indent {
   }
 } Indent;
 
+/**
+ * @brief Snippet
+ *
+ */
 class Snippet {
  public:
+  /**
+   * @brief Construct a new Snippet object as Line
+   *
+   * @param indent
+   */
   Snippet(LineType, const Indent &indent = Indent(0, kDefaultIndentSize))
       : indent_(indent), header_(), footer_(), type_(SnippetType::kLine) {}
+  /**
+   * @brief Construct a new Snippet object as system include
+   *
+   * @param indent
+   */
   Snippet(SystemIncludeType, const Indent &indent = Indent(0, kDefaultIndentSize))
       : indent_(indent), header_("#include <"), footer_(">"), type_(SnippetType::kSystemInclude) {}
+  /**
+   * @brief Construct a new Snippet object as local include
+   *
+   * @param base_dir_path include relative base path
+   * @param indent
+   */
   Snippet(LocalIncludeType, const std::string base_dir_path, const Indent &indent = Indent(0, kDefaultIndentSize))
       : indent_(indent), header_("#include \"" + base_dir_path), footer_("\""), type_(SnippetType::kLocalInclude) {}
   ~Snippet() = default;
@@ -122,8 +142,17 @@ class Snippet {
   std::vector<std::string> lines_;
 };
 
+/**
+ * @brief Codeblock
+ *
+ */
 class Block {
  public:
+  /**
+   * @brief Construct a new Block object as definition
+   *
+   * @param indent
+   */
   Block(DefinitionType, const Indent &indent = Indent(0, kDefaultIndentSize))
       : indent_(indent), header_("{\n"), footer_("}\n"), type_(SnippetType::kDefinition) {}
   ~Block() = default;
