@@ -1,4 +1,6 @@
 var annotated_dup =
 [
-    [ "Dummy", "class_dummy.html", "class_dummy" ]
+    [ "cppcodegen", null, [
+      [ "Dummy", "classcppcodegen_1_1_dummy.html", "classcppcodegen_1_1_dummy" ]
+    ] ]
 ];
