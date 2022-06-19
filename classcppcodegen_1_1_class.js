@@ -13,8 +13,6 @@ var classcppcodegen_1_1_class =
     [ "header_", "classcppcodegen_1_1_class.html#a46dbdf726554aa357acca5db4e076670", null ],
     [ "indent_", "classcppcodegen_1_1_class.html#a884ce9a990a16f3d436313121e1cc14d", null ],
     [ "name_", "classcppcodegen_1_1_class.html#a6456f03f82ed669f389fd5ad77b53549", null ],
-    [ "private_snippets_", "classcppcodegen_1_1_class.html#a0497909ec3b8b63a611b5bd750e6bcdf", null ],
-    [ "protected_snippets_", "classcppcodegen_1_1_class.html#ac2ff2c1ce65eadb859ace456892ee391", null ],
-    [ "public_snippets_", "classcppcodegen_1_1_class.html#a815ec1cc4a5846738daf5a7c3c383942", null ],
+    [ "snippets_", "classcppcodegen_1_1_class.html#a085118430bab28ffd11cd495742a951a", null ],
     [ "type_", "classcppcodegen_1_1_class.html#ab33a999a2c3f62c10bc51766ae7f71a7", null ]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['type_48',['Type',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0a',1,'cppcodegen']]],
-  ['type_5f_49',['type_',['../classcppcodegen_1_1_snippet.html#acb3fa7b4d63d59ef622b3343be627522',1,'cppcodegen::Snippet::type_()'],['../classcppcodegen_1_1_block.html#aacbf50f29485c7aef6ab8329893ae1e7',1,'cppcodegen::Block::type_()'],['../classcppcodegen_1_1_class.html#ab33a999a2c3f62c10bc51766ae7f71a7',1,'cppcodegen::Class::type_()']]]
+  ['_7eblock_47',['~Block',['../classcppcodegen_1_1_block.html#a0e7af68fee5f69a70c8f5908eeb8cd91',1,'cppcodegen::Block']]],
+  ['_7eclass_48',['~Class',['../classcppcodegen_1_1_class.html#a002e1d9893694982797797baa4042218',1,'cppcodegen::Class']]],
+  ['_7esnippet_49',['~Snippet',['../classcppcodegen_1_1_snippet.html#ae33fbcf74ba5ad05de95cc03a9dce641',1,'cppcodegen::Snippet']]]
 ];

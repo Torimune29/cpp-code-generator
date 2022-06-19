@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['size_5f_101',['size_',['../structcppcodegen_1_1_indent.html#a6f55f4065abd7e4375c78c9ba2bb98f4',1,'cppcodegen::Indent']]],
-  ['snippets_5f_102',['snippets_',['../classcppcodegen_1_1_block.html#aec845cc76ffb3e8d419ac2510b931b31',1,'cppcodegen::Block']]],
-  ['system_5finclude_5ft_103',['system_include_t',['../namespacecppcodegen.html#a018d8b324306b2f7ab5c26623d7faf61',1,'cppcodegen']]]
+  ['type_5f_98',['type_',['../classcppcodegen_1_1_snippet.html#acb3fa7b4d63d59ef622b3343be627522',1,'cppcodegen::Snippet::type_()'],['../classcppcodegen_1_1_block.html#aacbf50f29485c7aef6ab8329893ae1e7',1,'cppcodegen::Block::type_()'],['../classcppcodegen_1_1_class.html#ab33a999a2c3f62c10bc51766ae7f71a7',1,'cppcodegen::Class::type_()']]]
 ];

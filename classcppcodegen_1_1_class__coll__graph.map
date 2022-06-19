@@ -1,9 +1,10 @@
 <map id="cppcodegen::Class" name="cppcodegen::Class">
-<area shape="rect" id="node1" title="Class and Struct." alt="" coords="33,941,188,1136"/>
+<area shape="rect" id="node1" title="Class and Struct." alt="" coords="5,1111,160,1305"/>
 <area shape="rect" id="node2" href="$structcppcodegen_1_1_indent.html" title="Indent information holder." alt="" coords="43,287,192,408"/>
-<area shape="rect" id="node6" href="$classcppcodegen_1_1_snippet.html" title="Snippet." alt="" coords="161,471,319,680"/>
-<area shape="rect" id="node3" title=" " alt="" coords="133,147,219,224"/>
-<area shape="rect" id="node7" title=" " alt="" coords="321,309,508,386"/>
-<area shape="rect" id="node4" title=" " alt="" coords="107,5,245,97"/>
-<area shape="rect" id="node5" title=" " alt="" coords="148,743,332,835"/>
+<area shape="rect" id="node7" href="$classcppcodegen_1_1_snippet.html" title="Snippet." alt="" coords="172,471,329,680"/>
+<area shape="rect" id="node3" title=" " alt="" coords="135,147,222,224"/>
+<area shape="rect" id="node8" title=" " alt="" coords="324,309,511,386"/>
+<area shape="rect" id="node4" title=" " alt="" coords="109,5,248,97"/>
+<area shape="rect" id="node5" title=" " alt="" coords="145,927,317,1048"/>
+<area shape="rect" id="node6" title=" " alt="" coords="164,772,348,864"/>
 </map>
