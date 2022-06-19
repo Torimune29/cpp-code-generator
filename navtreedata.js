@@ -25,14 +25,8 @@
 var NAVTREE =
 [
   [ "Dev C++ OSS Template", "index.html", [
-    [ "Documentation", "index.html#autotoc_md1", null ],
-    [ "Structure", "index.html#autotoc_md2", null ],
-    [ "Development", "index.html#autotoc_md3", null ],
-    [ ".gitignore", "index.html#autotoc_md4", null ],
-    [ "Services", "index.html#autotoc_md5", null ],
-    [ "Setup", "index.html#autotoc_md6", [
-      [ "Using the GitHub template", "index.html#autotoc_md7", null ],
-      [ "From command line", "index.html#autotoc_md8", null ]
+    [ "cppcodegen", "index.html", [
+      [ "Features(WIP)", "index.html#autotoc_md1", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
