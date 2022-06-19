@@ -91,7 +91,7 @@ TEST(cppcodegenTest, Block) {
     B b = a.foo();
   }
 )";
-  cppcodegen::Block block(cppcodegen::definition_t);
+  cppcodegen::Block block(cppcodegen::code_block_t);
   block.Add(block_line_1);
   block.Add(block_line_2);
 
@@ -117,8 +117,8 @@ TEST(cppcodegenTest, BlockIntoBlock) {
     }
   }
 )";
-  cppcodegen::Block block(cppcodegen::definition_t);
-  cppcodegen::Block block_2(cppcodegen::definition_t);
+  cppcodegen::Block block(cppcodegen::code_block_t);
+  cppcodegen::Block block_2(cppcodegen::code_block_t);
   block.Add(block_line_1);
   block.Add(block_line_2);
   block_2.Add(block);
@@ -142,7 +142,7 @@ TEST(cppcodegenTest, BlockAddSnippet) {
   }
 )";
   cppcodegen::Snippet line(cppcodegen::line_t);
-  cppcodegen::Block block(cppcodegen::definition_t);
+  cppcodegen::Block block(cppcodegen::code_block_t);
   line.Add({snippet_line_1, snippet_line_2});
   block.Add(line);
 
@@ -177,4 +177,28 @@ TEST(cppcodegenTest, BlockAsNamespace) {
   EXPECT_EQ(block_namespace_1.Out(), namespace_expected);
   block_namespace_1.Add(block_namespace_2);
   EXPECT_EQ(block_namespace_1.Out(), namespace_expected_combined);
+}
+
+TEST(cppcodegenTest, BlockAsDefinition) {
+  const std::string snippet_declaration = "A Test()";
+  const std::string snippet_definition = "return A;";
+  const std::string definition_expected = R"(A Test() {
+  return A;
+}
+)";
+  const std::string namespace_definition_expected = R"(namespace Test {
+  A Test() {
+    return A;
+  }
+}
+)";
+  cppcodegen::Snippet line(cppcodegen::line_t);
+  cppcodegen::Block block_definition(cppcodegen::definition_t, snippet_declaration);
+  cppcodegen::Block block_namespace(cppcodegen::namespace_t, "Test");
+  line.Add(snippet_definition);
+  block_definition.Add(line);
+  block_namespace.Add(block_definition);
+
+  EXPECT_EQ(block_definition.Out(), definition_expected);
+  EXPECT_EQ(block_namespace.Out(), namespace_definition_expected);
 }

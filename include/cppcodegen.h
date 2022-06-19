@@ -16,6 +16,9 @@ typedef struct SystemIncludeType {
 typedef struct LocalIncludeType {
   explicit LocalIncludeType() = default;
 } LocalIncludeType;
+typedef struct CodeBlockType {
+  explicit CodeBlockType() = default;
+} CodeBlockType;
 typedef struct DefinitionType {
   explicit DefinitionType() = default;
 } DefinitionType;
@@ -26,10 +29,11 @@ typedef struct NamespaceType {
 constexpr LineType line_t{};
 constexpr SystemIncludeType system_include_t{};
 constexpr LocalIncludeType local_include_t{};
+constexpr CodeBlockType code_block_t{};
 constexpr DefinitionType definition_t{};
 constexpr NamespaceType namespace_t{};
 
-enum class SnippetType { kLine, kSystemInclude, kLocalInclude, kDefinition, kNamespace };
+enum class Type { kLine, kSystemInclude, kLocalInclude, kCodeBlock, kDefinition, kNamespace };
 
 /**
  * @brief Indent information holder
@@ -72,7 +76,7 @@ class Snippet {
    * @param indent
    */
   Snippet(LineType, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_(), footer_(), type_(SnippetType::kLine) {
+      : indent_(indent), header_(), footer_(), type_(Type::kLine) {
   }
   /**
    * @brief Construct a new Snippet object as system include
@@ -80,7 +84,7 @@ class Snippet {
    * @param indent
    */
   Snippet(SystemIncludeType, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_("#include <"), footer_(">"), type_(SnippetType::kSystemInclude) {
+      : indent_(indent), header_("#include <"), footer_(">"), type_(Type::kSystemInclude) {
   }
   /**
    * @brief Construct a new Snippet object as local include
@@ -89,7 +93,7 @@ class Snippet {
    * @param indent
    */
   Snippet(LocalIncludeType, const std::string base_dir_path, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_("#include \"" + base_dir_path), footer_("\""), type_(SnippetType::kLocalInclude) {
+      : indent_(indent), header_("#include \"" + base_dir_path), footer_("\""), type_(Type::kLocalInclude) {
   }
   ~Snippet() = default;
 
@@ -106,7 +110,7 @@ class Snippet {
     return snippet;
   }
 
-  SnippetType Type() const noexcept {
+  Type GetType() const noexcept {
     return type_;
   }
 
@@ -147,7 +151,7 @@ class Snippet {
   Indent indent_;
   std::string header_;
   std::string footer_;
-  SnippetType type_;
+  Type type_;
   std::vector<std::string> lines_;
 };
 
@@ -158,12 +162,20 @@ class Snippet {
 class Block {
  public:
   /**
+   * @brief Construct a new Block object as codeblock
+   *
+   * @param indent
+   */
+  Block(CodeBlockType, const Indent &indent = Indent(0, kDefaultIndentSize))
+      : indent_(indent), header_("{\n"), footer_("}\n"), type_(Type::kCodeBlock) {
+  }
+  /**
    * @brief Construct a new Block object as definition
    *
    * @param indent
    */
-  Block(DefinitionType, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_("{\n"), footer_("}\n"), type_(SnippetType::kDefinition) {
+  Block(DefinitionType, const std::string &declaration, const Indent &indent = Indent(0, kDefaultIndentSize))
+      : indent_(indent), header_(declaration + " {\n"), footer_("}\n"), type_(Type::kDefinition) {
   }
   /**
    * @brief Construct a new Block object as namespace
@@ -172,7 +184,7 @@ class Block {
    * @param indent
    */
   Block(NamespaceType, const std::string &name, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_("namespace " + name + " {\n"), footer_("}\n"), type_(SnippetType::kNamespace) {
+      : indent_(indent), header_("namespace " + name + " {\n"), footer_("}\n"), type_(Type::kNamespace) {
   }
   ~Block() = default;
 
@@ -190,7 +202,7 @@ class Block {
     return block;
   }
 
-  SnippetType Type() const noexcept {
+  Type GetType() const noexcept {
     return type_;
   }
 
@@ -237,7 +249,7 @@ class Block {
   Indent indent_;
   std::string header_;
   std::string footer_;
-  SnippetType type_;
+  Type type_;
   std::vector<Snippet> snippets_;
 };
 
