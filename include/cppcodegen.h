@@ -34,6 +34,7 @@ constexpr DefinitionType definition_t{};
 constexpr NamespaceType namespace_t{};
 
 enum class Type { kLine, kSystemInclude, kLocalInclude, kCodeBlock, kDefinition, kNamespace };
+enum class AccessSpecifier { kPublic, kProtected, kPrivate };
 
 /**
  * @brief Indent information holder
@@ -251,6 +252,124 @@ class Block {
   std::string footer_;
   Type type_;
   std::vector<Snippet> snippets_;
+};
+
+/**
+ * @brief Class and Struct
+ *
+ */
+class Class {
+ public:
+  /**
+   * @brief Construct a new Block object as codeblock
+   *
+   * @param indent
+   */
+  Class(const std::string &name, const Indent &indent = Indent(0, kDefaultIndentSize))
+      : indent_(indent), name_(name), header_(" {\n"), footer_("}\n"), type_(Type::kCodeBlock) {
+  }
+  ~Class() = default;
+
+  /**
+   * @brief Out with own indent
+   *
+   * @return std::string
+   */
+  std::string Out() const noexcept {
+    std::string block = indent_.Indenting() + "class " + name_ + header_;
+    if (!public_snippets_.empty()) {
+      block += indent_.Indenting() + " public:\n";
+      for (const auto &snippet : public_snippets_) {
+        block += snippet.Out();
+      }
+    }
+    if (!protected_snippets_.empty()) {
+      block += indent_.Indenting() + " protected:\n";
+      for (const auto &snippet : protected_snippets_) {
+        block += snippet.Out();
+      }
+    }
+    if (!private_snippets_.empty()) {
+      block += indent_.Indenting() + " private:\n";
+      for (const auto &snippet : private_snippets_) {
+        block += snippet.Out();
+      }
+    }
+    block += indent_.Indenting() + footer_;
+    return block;
+  }
+
+  Type GetType() const noexcept {
+    return type_;
+  }
+
+  void Add(const std::string &line, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
+    Snippet snippet(line_t, Indent(indent_.level_ + 1, indent_.size_));
+    snippet.Add(line);
+    if (access_specifier == AccessSpecifier::kPrivate) {
+      private_snippets_.emplace_back(std::move(snippet));
+    } else if (access_specifier == AccessSpecifier::kPublic) {
+      public_snippets_.emplace_back(std::move(snippet));
+    } else if (access_specifier == AccessSpecifier::kProtected) {
+      protected_snippets_.emplace_back(std::move(snippet));
+    }
+    return;
+  }
+
+  void Add(const std::vector<std::string> &lines,
+           AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
+    for (const auto &line : lines) {
+      Add(line, access_specifier);
+    }
+    return;
+  }
+
+  void Add(const Snippet &snippet, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
+    Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
+    snippet_copy.Add(snippet);
+    if (access_specifier == AccessSpecifier::kPrivate) {
+      private_snippets_.emplace_back(std::move(snippet_copy));
+    } else if (access_specifier == AccessSpecifier::kPublic) {
+      public_snippets_.emplace_back(std::move(snippet_copy));
+    } else if (access_specifier == AccessSpecifier::kProtected) {
+      protected_snippets_.emplace_back(std::move(snippet_copy));
+    }
+    return;
+  }
+
+  void Add(const Block &block, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
+    auto block_copy = block;
+    std::stringstream line_stream(block_copy.Out());
+    std::string line;
+    while (std::getline(line_stream, line)) {
+      Add(line, access_specifier);
+    }
+    return;
+  }
+
+  void IncrementIndent(std::size_t size = 1) noexcept {
+    indent_.level_ += size;
+    for (auto &&snippet : private_snippets_) {
+      snippet.IncrementIndent(size);
+    }
+    for (auto &&snippet : public_snippets_) {
+      snippet.IncrementIndent(size);
+    }
+    for (auto &&snippet : protected_snippets_) {
+      snippet.IncrementIndent(size);
+    }
+    return;
+  }
+
+ private:
+  Indent indent_;
+  std::string name_;
+  std::string header_;
+  std::string footer_;
+  Type type_;
+  std::vector<Snippet> private_snippets_;
+  std::vector<Snippet> public_snippets_;
+  std::vector<Snippet> protected_snippets_;
 };
 
 }  // namespace cppcodegen

@@ -202,3 +202,36 @@ TEST(cppcodegenTest, BlockAsDefinition) {
   EXPECT_EQ(block_definition.Out(), definition_expected);
   EXPECT_EQ(block_namespace.Out(), namespace_definition_expected);
 }
+
+TEST(cppcodegenTest, Class) {
+  const std::string class_name = "TestClass";
+  const std::string private_member = "char c;";
+  const std::string protected_member = "int b;";
+  const std::string public_member = "TestClass();";
+  const std::string block_expected = R"(class TestClass {
+ public:
+  TestClass();
+ protected:
+  int b;
+ private:
+  char c;
+}
+)";
+  const std::string block_expected_indented = R"(  class TestClass {
+   public:
+    TestClass();
+   protected:
+    int b;
+   private:
+    char c;
+  }
+)";
+  cppcodegen::Class class_block("TestClass");
+  class_block.Add(private_member, cppcodegen::AccessSpecifier::kPrivate);
+  class_block.Add(protected_member, cppcodegen::AccessSpecifier::kProtected);
+  class_block.Add(public_member, cppcodegen::AccessSpecifier::kPublic);
+
+  EXPECT_EQ(class_block.Out(), block_expected);
+  class_block.IncrementIndent();
+  EXPECT_EQ(class_block.Out(), block_expected_indented);
+}
