@@ -1,9 +1,13 @@
 var classcppcodegen_1_1_snippet =
 [
-    [ "Snippet", "classcppcodegen_1_1_snippet.html#ae4609815d14d7bd359bfc0c43732f7d5", null ],
-    [ "Snippet", "classcppcodegen_1_1_snippet.html#a285c917a1bbabeecb65ac396d1cc2212", null ],
-    [ "Snippet", "classcppcodegen_1_1_snippet.html#af85ef4b31845daab1fa90331ae0b7df8", null ],
-    [ "~Snippet", "classcppcodegen_1_1_snippet.html#a9201996789edb55753024677ff20c2f6", null ],
-    [ "Add", "classcppcodegen_1_1_snippet.html#ab7fb01615a25a4fc5f7dfaba161edc9a", null ],
-    [ "Out", "classcppcodegen_1_1_snippet.html#a286508f4e21b36e4e1ab637b15c51415", null ]
+    [ "Snippet", "classcppcodegen_1_1_snippet.html#a9555deb81c7e9c7a340e54807685f3a8", null ],
+    [ "Snippet", "classcppcodegen_1_1_snippet.html#aa19e3f2cf4cec273f6575486212d9508", null ],
+    [ "Snippet", "classcppcodegen_1_1_snippet.html#af239e51881182f3c4809258d59135ddd", null ],
+    [ "~Snippet", "classcppcodegen_1_1_snippet.html#ae33fbcf74ba5ad05de95cc03a9dce641", null ],
+    [ "Add", "classcppcodegen_1_1_snippet.html#aec0348be5c68ef33202aa505f0107a32", null ],
+    [ "Add", "classcppcodegen_1_1_snippet.html#a9fdcb780e57f7b2ad65016369d3fd962", null ],
+    [ "Add", "classcppcodegen_1_1_snippet.html#af0e3e50d66448cf291de795b73eb7a76", null ],
+    [ "IncrementIndent", "classcppcodegen_1_1_snippet.html#afe4d05f75b16c8d78696ac102d42c353", null ],
+    [ "Out", "classcppcodegen_1_1_snippet.html#a5065455adae9b977880c48468043bf6b", null ],
+    [ "Type", "classcppcodegen_1_1_snippet.html#a5de12948a566a6c4f836c7f7d0198675", null ]
 ];

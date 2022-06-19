@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['indent_1',['Indent',['../structcppcodegen_1_1_indent.html',1,'cppcodegen']]]
+  ['block_1',['Block',['../classcppcodegen_1_1_block.html',1,'cppcodegen']]]
 ];

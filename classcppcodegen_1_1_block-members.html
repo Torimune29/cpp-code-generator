@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('structcppcodegen_1_1_indent.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classcppcodegen_1_1_block.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,18 +84,21 @@ $(document).ready(function(){initNavTree('structcppcodegen_1_1_indent.html','');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">cppcodegen::Indent Member List</div>  </div>
+<div class="title">cppcodegen::Block Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>character_</b> (defined in <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>)</td><td class="entry"><a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Indent</b>(std::size_t level, std::size_t size, char character=' ') (defined in <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>)</td><td class="entry"><a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>indent_string_</b> (defined in <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>)</td><td class="entry"><a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Indenting</b>() const noexcept (defined in <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>)</td><td class="entry"><a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>level_</b> (defined in <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>)</td><td class="entry"><a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>size_</b> (defined in <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>)</td><td class="entry"><a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Add</b>(const std::string &amp;line) noexcept (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Add</b>(const Snippet &amp;snippet) noexcept (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Add</b>(const std::vector&lt; std::string &gt; &amp;lines) noexcept (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Add</b>(const Block &amp;block) noexcept (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Block</b>(DefinitionType, const Indent &amp;indent=Indent(0, kDefaultIndentSize)) (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>IncrementIndent</b>(std::size_t size=1) noexcept (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html#a44d3b06c8525f6135179dcf779a0bd61">Out</a>() const noexcept</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Type</b>() const noexcept (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Block</b>()=default (defined in <a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a>)</td><td class="entry"><a class="el" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
