@@ -5,22 +5,16 @@
 #include <iostream>
 #include <string>
 
-#include "CLI/CLI.hpp"
 #include "ProjectInformation.h"
-#include "example.h"
+#include "cppcodegen.h"
 
-/*
- * Simple main program that demontrates how access
- * CMake definitions (here the version number) from source code.
+/**
+ * @brief for header warning check only
+ *
  */
-int main(int argc, char *argv[]) {
+int main(int /*argc*/, char** /*argv[]*/) {
   std::cout << PROJECT_NAME_VERSION << std::endl;
+  cppcodegen::Line line;
 
-  CLI::App app{"Sample App description"};
-  std::string filename = "../LICENSE";
-  app.add_option("-f,--file", filename, "Path");
-  CLI11_PARSE(app, argc, argv)
-  // Bring in the dummy class from the example source,
-  // just to show that it is accessible from main.cpp.
-  return Dummy::DoSomething() ? 0 : -1;
+  return 0;
 }

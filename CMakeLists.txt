@@ -40,6 +40,13 @@ set(TESTFILES # All .cpp files in tests/
 # Build! (Change as needed)
 # --------------------------------------------------------------------------------
 
+# Add an executable for the file app/main.cpp.
+# If you add more executables, copy these lines accordingly.
+add_executable(${APP_NAME} app/main.cpp) # Name of exec. and location of file.
+target_include_directories(${APP_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_set_warnings(${APP_NAME} ENABLE ALL AS_ERROR ALL DISABLE Annoying) # Set warnings (if needed).
+target_enable_lto(${APP_NAME} optimized) # enable link-time-optimization if available for non-debug configurations
+
 # Add external libs. No change needed.
 add_subdirectory(cmake/external)
 
