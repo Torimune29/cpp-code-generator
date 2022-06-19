@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-test-container:
+
+    name: docker-clang
+    runs-on: Ubuntu-20.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: false
+          tags: project:latest
+          build-args: |
+            PROJECT_NAME=project
+
+      - name: Run Test
+        uses: addnab/docker-run-action@v3
+        with:
+          image: project:latest
+          options: -v ${{ github.workspace }}:/tmp/project
+          shell: bash
+          run: |
+            cmake -DCMAKE_BUILD_TYPE=Coverage -S /tmp/project -B /tmp/build
+            make -j4 -C /tmp/build
+            make check -C /tmp/build
+            make coverage -C /tmp/build
+            cp /tmp/build/coverage_out.info /tmp/project
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage_out.info
+
