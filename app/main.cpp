@@ -14,7 +14,7 @@
  */
 int main(int /*argc*/, char** /*argv[]*/) {
   std::cout << PROJECT_NAME_VERSION << std::endl;
-  cppcodegen::Line line(cppcodegen::line_t);
+  cppcodegen::Snippet line(cppcodegen::line_t);
 
   return 0;
 }
