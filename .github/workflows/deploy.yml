@@ -1,0 +1,57 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-pages:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Build
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: false
+          tags: project:latest
+          build-args: |
+            PROJECT_NAME=project
+
+      - name: Run Document and Notice
+        uses: addnab/docker-run-action@v3
+        with:
+          image: project:latest
+          options: -v ${{ github.workspace }}:/tmp/project
+          shell: bash
+          run: |
+            cmake -DCMAKE_BUILD_TYPE=Release -S /tmp/project -B /tmp/build
+            make doc -C /tmp/build
+            make notice -C /tmp/build
+            cp -r /tmp/build/docs /tmp/project
+            cp /tmp/build/NOTICE /tmp/project
+
+      - name: Deploy Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+
+      - name: Commit Notice
+        run: |
+          git config --local user.email ""41898282+github-actions[bot]@users.noreply.github.com""
+          git config --local user.name "github-actions[bot]"
+          (git add NOTICE && git commit -m "Add NOTICE") || true
+
+      - name: Push Notice
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
