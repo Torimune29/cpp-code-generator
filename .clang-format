@@ -1,6 +1,11 @@
 ﻿---
+
 BasedOnStyle: Google
 ColumnLimit: '120'
 Standard: Cpp11
+AllowShortBlocksOnASingleLine: 'false'
+AllowShortCaseLabelsOnASingleLine: 'false'
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: 'false'
 
 ...

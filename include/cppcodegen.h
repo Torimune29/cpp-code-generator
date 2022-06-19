@@ -68,14 +68,16 @@ class Snippet {
    * @param indent
    */
   Snippet(LineType, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_(), footer_(), type_(SnippetType::kLine) {}
+      : indent_(indent), header_(), footer_(), type_(SnippetType::kLine) {
+  }
   /**
    * @brief Construct a new Snippet object as system include
    *
    * @param indent
    */
   Snippet(SystemIncludeType, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_("#include <"), footer_(">"), type_(SnippetType::kSystemInclude) {}
+      : indent_(indent), header_("#include <"), footer_(">"), type_(SnippetType::kSystemInclude) {
+  }
   /**
    * @brief Construct a new Snippet object as local include
    *
@@ -83,7 +85,8 @@ class Snippet {
    * @param indent
    */
   Snippet(LocalIncludeType, const std::string base_dir_path, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_("#include \"" + base_dir_path), footer_("\""), type_(SnippetType::kLocalInclude) {}
+      : indent_(indent), header_("#include \"" + base_dir_path), footer_("\""), type_(SnippetType::kLocalInclude) {
+  }
   ~Snippet() = default;
 
   /**
@@ -99,7 +102,9 @@ class Snippet {
     return snippet;
   }
 
-  SnippetType Type() const noexcept { return type_; }
+  SnippetType Type() const noexcept {
+    return type_;
+  }
 
   void Add(const std::string &line) noexcept {
     lines_.emplace_back(header_ + line + footer_);
@@ -154,7 +159,8 @@ class Block {
    * @param indent
    */
   Block(DefinitionType, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), header_("{\n"), footer_("}\n"), type_(SnippetType::kDefinition) {}
+      : indent_(indent), header_("{\n"), footer_("}\n"), type_(SnippetType::kDefinition) {
+  }
   ~Block() = default;
 
   /**
@@ -171,7 +177,9 @@ class Block {
     return block;
   }
 
-  SnippetType Type() const noexcept { return type_; }
+  SnippetType Type() const noexcept {
+    return type_;
+  }
 
   void Add(const std::string &line) noexcept {
     Snippet snippet(line_t, Indent(indent_.level_ + 1, indent_.size_));
