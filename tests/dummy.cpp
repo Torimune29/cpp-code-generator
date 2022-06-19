@@ -150,3 +150,31 @@ TEST(cppcodegenTest, BlockAddSnippet) {
   block.IncrementIndent();
   EXPECT_EQ(block.Out(), block_expected_indented);
 }
+
+TEST(cppcodegenTest, BlockAsNamespace) {
+  const std::string snippet_line_1 = "A Test();";
+  const std::string snippet_line_2 = "void Foo(int a);";
+  const std::string namespace_expected = R"(namespace Test {
+  A Test();
+  void Foo(int a);
+}
+)";
+  const std::string namespace_expected_combined = R"(namespace Test {
+  A Test();
+  void Foo(int a);
+  namespace TestNested {
+    A Test();
+  }
+}
+)";
+  cppcodegen::Snippet line(cppcodegen::line_t);
+  cppcodegen::Block block_namespace_1(cppcodegen::namespace_t, "Test");
+  cppcodegen::Block block_namespace_2(cppcodegen::namespace_t, "TestNested");
+  line.Add({snippet_line_1, snippet_line_2});
+  block_namespace_1.Add(line);
+  block_namespace_2.Add(snippet_line_1);
+
+  EXPECT_EQ(block_namespace_1.Out(), namespace_expected);
+  block_namespace_1.Add(block_namespace_2);
+  EXPECT_EQ(block_namespace_1.Out(), namespace_expected_combined);
+}

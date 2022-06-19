@@ -19,13 +19,17 @@ typedef struct LocalIncludeType {
 typedef struct DefinitionType {
   explicit DefinitionType() = default;
 } DefinitionType;
+typedef struct NamespaceType {
+  explicit NamespaceType() = default;
+} NamespaceType;
 
 constexpr LineType line_t{};
 constexpr SystemIncludeType system_include_t{};
 constexpr LocalIncludeType local_include_t{};
 constexpr DefinitionType definition_t{};
+constexpr NamespaceType namespace_t{};
 
-enum class SnippetType { kLine, kSystemInclude, kLocalInclude, kDefinition };
+enum class SnippetType { kLine, kSystemInclude, kLocalInclude, kDefinition, kNamespace };
 
 /**
  * @brief Indent information holder
@@ -160,6 +164,15 @@ class Block {
    */
   Block(DefinitionType, const Indent &indent = Indent(0, kDefaultIndentSize))
       : indent_(indent), header_("{\n"), footer_("}\n"), type_(SnippetType::kDefinition) {
+  }
+  /**
+   * @brief Construct a new Block object as namespace
+   *
+   * @param name
+   * @param indent
+   */
+  Block(NamespaceType, const std::string &name, const Indent &indent = Indent(0, kDefaultIndentSize))
+      : indent_(indent), header_("namespace " + name + " {\n"), footer_("}\n"), type_(SnippetType::kNamespace) {
   }
   ~Block() = default;
 
