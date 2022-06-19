@@ -144,8 +144,8 @@ class Snippet {
     return;
   }
 
-  void IncrementIndent(std::size_t size = 1) noexcept {
-    indent_.level_ += size;
+  void IncrementIndent(std::size_t level = 1) noexcept {
+    indent_.level_ += level;
     return;
   }
 
@@ -239,10 +239,10 @@ class Block {
     return;
   }
 
-  void IncrementIndent(std::size_t size = 1) noexcept {
-    indent_.level_ += size;
+  void IncrementIndent(std::size_t level = 1) noexcept {
+    indent_.level_ += level;
     for (auto &&snippet : snippets_) {
-      snippet.IncrementIndent(size);
+      snippet.IncrementIndent(level);
     }
     return;
   }
@@ -342,11 +342,11 @@ class Class {
     return;
   }
 
-  void IncrementIndent(std::size_t size = 1) noexcept {
-    indent_.level_ += size;
+  void IncrementIndent(std::size_t level = 1) noexcept {
+    indent_.level_ += level;
     for (auto &&each_snippets : snippets_) {
       for (auto &&snippet : each_snippets.second) {
-        snippet.IncrementIndent(size);
+        snippet.IncrementIndent(level);
       }
     }
     return;
