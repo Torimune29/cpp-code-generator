@@ -5,7 +5,7 @@ namespace cppcodegen {
 typedef struct LineType {
   explicit LineType() = default;
 } LineType;
-constexpr LineType line_type_t{};
+constexpr LineType line_t{};
 
 typedef struct SystemIncludeType {
   explicit SystemIncludeType() = default;
@@ -39,13 +39,18 @@ typedef struct Indent {
 template <typename Type>
 class Snippet {
  public:
-  explicit Snippet(const Indent &indent = Indent(0, 0)) : indent_(indent) {}
+  Snippet(LineType type, const Indent &indent = Indent(0, 0))
+      : indent_(indent), header_(), footer_("\n"), type_(type) {}
+  Snippet(SystemIncludeType type, const Indent &indent = Indent(0, 0))
+      : indent_(indent), header_("#include <"), footer_(">\n"), type_(type) {}
+  Snippet(LocalIncludeType type, const std::string base_dir_path, const Indent &indent = Indent(0, 0))
+      : indent_(indent), header_("#include \"" + base_dir_path), footer_("\"\n"), type_(type) {}
   virtual ~Snippet() = default;
 
   template <typename... Args>
-  void Add(Args... args) {
+  void Add(Args &&...args) {
     snippet_ += Indenting();
-    add(args...);
+    add(std::forward<Args>(args)...);
     return;
   }
 
@@ -59,13 +64,17 @@ class Snippet {
  private:
   std::string snippet_;
   const Indent indent_;
+  std::string header_;
+  std::string footer_;
+  Type type_;
 
-  void add(const Snippet<Type> &snippet) noexcept {
+  template <typename AllType>
+  void add(const Snippet<AllType> &snippet) noexcept {
     snippet_ += snippet.Out();
     return;
   }
-  void add(LineType, const std::string &line) noexcept {
-    snippet_ += line + "\n";
+  void add(const std::string &line) noexcept {
+    snippet_ += header_ + line + footer_;
     return;
   }
 
@@ -81,5 +90,7 @@ class Snippet {
 };
 
 using Line = Snippet<LineType>;
+using SystemInclude = Snippet<SystemIncludeType>;
+using LocalInclude = Snippet<LocalIncludeType>;
 
 }  // namespace cppcodegen
