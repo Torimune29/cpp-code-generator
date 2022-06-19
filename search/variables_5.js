@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kdefaultindentsize_67',['kDefaultIndentSize',['../namespacecppcodegen.html#a25ef7bea7d621b5e0d4b61cd2d27051a',1,'cppcodegen']]]
+  ['kdefaultindentsize_72',['kDefaultIndentSize',['../namespacecppcodegen.html#a25ef7bea7d621b5e0d4b61cd2d27051a',1,'cppcodegen']]]
 ];

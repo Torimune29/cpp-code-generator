@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7eblock_59',['~Block',['../classcppcodegen_1_1_block.html#a0e7af68fee5f69a70c8f5908eeb8cd91',1,'cppcodegen::Block']]],
-  ['_7esnippet_60',['~Snippet',['../classcppcodegen_1_1_snippet.html#ae33fbcf74ba5ad05de95cc03a9dce641',1,'cppcodegen::Snippet']]]
+  ['type_63',['Type',['../classcppcodegen_1_1_snippet.html#a5de12948a566a6c4f836c7f7d0198675',1,'cppcodegen::Snippet::Type()'],['../classcppcodegen_1_1_block.html#aba4dcf06b3a9ccae65b1f051081c0d3e',1,'cppcodegen::Block::Type()']]]
 ];
