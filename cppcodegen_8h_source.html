@@ -215,21 +215,21 @@ $(document).ready(function(){initNavTree('cppcodegen_8h_source.html',''); initRe
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">void</span> Add(<span class="keyword">const</span> std::string &amp;line) noexcept {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    Snippet snippet(line_t, Indent(indent_.level_ + 1, indent_.size_));</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    snippet.Add(line);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    snippets_.emplace_back(snippet);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    snippets_.emplace_back(std::move(snippet));</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordtype">void</span> Add(<span class="keyword">const</span> Snippet &amp;snippet) noexcept {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">auto</span> snippet_copy = snippet;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    snippet_copy.IncrementIndent(indent_.level_ + 1);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    snippets_.emplace_back(snippet_copy);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordtype">void</span> Add(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;lines) noexcept {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;line : lines) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      Add(line);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  }</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">void</span> Add(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;lines) noexcept {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;line : lines) {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      Add(line);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">void</span> Add(<span class="keyword">const</span> Snippet &amp;snippet) noexcept {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    snippet_copy.Add(snippet);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    snippets_.emplace_back(std::move(snippet_copy));</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  }</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
