@@ -9,7 +9,7 @@ var classcppcodegen_1_1_block =
     [ "Add", "classcppcodegen_1_1_block.html#adaa6283cd7f8370a616b8f73a1ed4fe6", null ],
     [ "Add", "classcppcodegen_1_1_block.html#ae466955e95050730cd0b3b71b478ed98", null ],
     [ "GetType", "classcppcodegen_1_1_block.html#a2d6a6b450efabc14ddefbaeb6cbcaa37", null ],
-    [ "IncrementIndent", "classcppcodegen_1_1_block.html#ac0337d6cef7de0ce1de48ef543ca6733", null ],
+    [ "IncrementIndent", "classcppcodegen_1_1_block.html#af7cff452ecb6a146fcdab41af8ca5633", null ],
     [ "Out", "classcppcodegen_1_1_block.html#a44d3b06c8525f6135179dcf779a0bd61", null ],
     [ "footer_", "classcppcodegen_1_1_block.html#a49a1df614a58f5731ecec57c73e8a0cf", null ],
     [ "header_", "classcppcodegen_1_1_block.html#aeb1db108b9175a77dc6b898a65a4d03d", null ],
