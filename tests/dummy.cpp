@@ -127,3 +127,26 @@ TEST(cppcodegenTest, BlockIntoBlock) {
   block_2.IncrementIndent();
   EXPECT_EQ(block_2.Out(), block_expected_indented);
 }
+
+TEST(cppcodegenTest, BlockAddSnippet) {
+  const std::string snippet_line_1 = "A *a = new A;";
+  const std::string snippet_line_2 = "B b = a.foo();";
+  const std::string block_expected = R"({
+  A *a = new A;
+  B b = a.foo();
+}
+)";
+  const std::string block_expected_indented = R"(  {
+    A *a = new A;
+    B b = a.foo();
+  }
+)";
+  cppcodegen::Snippet line(cppcodegen::line_t);
+  cppcodegen::Block block(cppcodegen::definition_t);
+  line.Add({snippet_line_1, snippet_line_2});
+  block.Add(line);
+
+  EXPECT_EQ(block.Out(), block_expected);
+  block.IncrementIndent();
+  EXPECT_EQ(block.Out(), block_expected_indented);
+}

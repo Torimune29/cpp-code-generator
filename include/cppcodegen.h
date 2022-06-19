@@ -147,14 +147,7 @@ class Block {
   void Add(const std::string &line) noexcept {
     Snippet snippet(line_t, Indent(indent_.level_ + 1, indent_.size_));
     snippet.Add(line);
-    snippets_.emplace_back(snippet);
-    return;
-  }
-
-  void Add(const Snippet &snippet) noexcept {
-    auto snippet_copy = snippet;
-    snippet_copy.IncrementIndent(indent_.level_ + 1);
-    snippets_.emplace_back(snippet_copy);
+    snippets_.emplace_back(std::move(snippet));
     return;
   }
 
@@ -162,6 +155,13 @@ class Block {
     for (const auto &line : lines) {
       Add(line);
     }
+    return;
+  }
+
+  void Add(const Snippet &snippet) noexcept {
+    Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
+    snippet_copy.Add(snippet);
+    snippets_.emplace_back(std::move(snippet_copy));
     return;
   }
 
