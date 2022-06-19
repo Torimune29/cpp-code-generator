@@ -215,7 +215,7 @@ TEST(cppcodegenTest, Class) {
   int b;
  private:
   char c;
-}
+};
 )";
   const std::string block_expected_indented = R"(  class TestClass {
    public:
@@ -224,7 +224,7 @@ TEST(cppcodegenTest, Class) {
     int b;
    private:
     char c;
-  }
+  };
 )";
   cppcodegen::Class class_block("TestClass");
   class_block.Add(private_member, cppcodegen::AccessSpecifier::kPrivate);
@@ -234,4 +234,32 @@ TEST(cppcodegenTest, Class) {
   EXPECT_EQ(class_block.Out(), block_expected);
   class_block.IncrementIndent();
   EXPECT_EQ(class_block.Out(), block_expected_indented);
+}
+
+TEST(cppcodegenTest, ClassInNamespace) {
+  const std::string class_name = "TestClass";
+  const std::string namespace_name = "TestNamespace";
+  const std::string private_member = "char c;";
+  const std::string protected_member = "int b;";
+  const std::string public_member = "TestClass();";
+  const std::string block_expected = R"(namespace TestNamespace {
+  class TestClass {
+   public:
+    TestClass();
+   protected:
+    int b;
+   private:
+    char c;
+  };
+}
+)";
+
+  cppcodegen::Block namespace_block(cppcodegen::namespace_t, "TestNamespace");
+  cppcodegen::Class class_block("TestClass");
+  class_block.Add(private_member, cppcodegen::AccessSpecifier::kPrivate);
+  class_block.Add(protected_member, cppcodegen::AccessSpecifier::kProtected);
+  class_block.Add(public_member, cppcodegen::AccessSpecifier::kPublic);
+  namespace_block.Add(class_block);
+
+  EXPECT_EQ(namespace_block.Out(), block_expected);
 }

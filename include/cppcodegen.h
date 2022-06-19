@@ -122,14 +122,14 @@ class Snippet {
   }
 
   /**
-   * @brief Add from other snippet
+   * @brief Add any type snippet as lines
    *
-   * @param snippet
-   * @details
-   * add without header and footer.
+   * @tparam T
+   * @param any
    */
-  void Add(const Snippet &snippet) noexcept {
-    std::stringstream line_stream(snippet.Out());
+  template <typename T>
+  void Add(const T &any) noexcept {
+    std::stringstream line_stream(any.Out());
     std::string line;
     while (std::getline(line_stream, line)) {
       lines_.emplace_back(line);
@@ -208,13 +208,6 @@ class Block {
     return type_;
   }
 
-  void Add(const std::string &line) noexcept {
-    Snippet snippet(line_t, Indent(indent_.level_ + 1, indent_.size_));
-    snippet.Add(line);
-    snippets_.emplace_back(std::move(snippet));
-    return;
-  }
-
   void Add(const std::vector<std::string> &lines) noexcept {
     for (const auto &line : lines) {
       Add(line);
@@ -222,20 +215,11 @@ class Block {
     return;
   }
 
-  void Add(const Snippet &snippet) noexcept {
+  template <typename T>
+  void Add(const T &any) noexcept {
     Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
-    snippet_copy.Add(snippet);
+    snippet_copy.Add(any);
     snippets_.emplace_back(std::move(snippet_copy));
-    return;
-  }
-
-  void Add(const Block &block) noexcept {
-    auto block_copy = block;
-    std::stringstream line_stream(block_copy.Out());
-    std::string line;
-    while (std::getline(line_stream, line)) {
-      Add(line);
-    }
     return;
   }
 
@@ -270,7 +254,7 @@ class Class {
       : indent_(indent),
         name_(name),
         header_(" {\n"),
-        footer_("}\n"),
+        footer_("};\n"),
         type_(Type::kCodeBlock),
         snippets_(
             {{AccessSpecifier::kPrivate, {}}, {AccessSpecifier::kPublic, {}}, {AccessSpecifier::kProtected, {}}}) {
@@ -310,13 +294,6 @@ class Class {
     return type_;
   }
 
-  void Add(const std::string &line, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
-    Snippet snippet(line_t, Indent(indent_.level_ + 1, indent_.size_));
-    snippet.Add(line);
-    snippets_[access_specifier].emplace_back(std::move(snippet));
-    return;
-  }
-
   void Add(const std::vector<std::string> &lines,
            AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
     for (const auto &line : lines) {
@@ -325,20 +302,11 @@ class Class {
     return;
   }
 
-  void Add(const Snippet &snippet, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
+  template <typename T>
+  void Add(const T &any, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
     Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
-    snippet_copy.Add(snippet);
+    snippet_copy.Add(any);
     snippets_[access_specifier].emplace_back(std::move(snippet_copy));
-    return;
-  }
-
-  void Add(const Block &block, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
-    auto block_copy = block;
-    std::stringstream line_stream(block_copy.Out());
-    std::string line;
-    while (std::getline(line_stream, line)) {
-      Add(line, access_specifier);
-    }
     return;
   }
 
