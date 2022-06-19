@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7eblock_64',['~Block',['../classcppcodegen_1_1_block.html#a0e7af68fee5f69a70c8f5908eeb8cd91',1,'cppcodegen::Block']]],
-  ['_7esnippet_65',['~Snippet',['../classcppcodegen_1_1_snippet.html#ae33fbcf74ba5ad05de95cc03a9dce641',1,'cppcodegen::Snippet']]]
+  ['snippet_67',['Snippet',['../classcppcodegen_1_1_snippet.html#a9555deb81c7e9c7a340e54807685f3a8',1,'cppcodegen::Snippet::Snippet(LineType, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_snippet.html#aa19e3f2cf4cec273f6575486212d9508',1,'cppcodegen::Snippet::Snippet(SystemIncludeType, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_snippet.html#af239e51881182f3c4809258d59135ddd',1,'cppcodegen::Snippet::Snippet(LocalIncludeType, const std::string base_dir_path, const Indent &amp;indent=Indent(0, kDefaultIndentSize))']]],
+  ['systemincludetype_68',['SystemIncludeType',['../structcppcodegen_1_1_system_include_type.html#a4fbaaa2b12714f5173951b712baa8711',1,'cppcodegen::SystemIncludeType']]]
 ];

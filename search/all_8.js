@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['level_5f_20',['level_',['../structcppcodegen_1_1_indent.html#a84653f5b6bcad55e91c69404a3c4715c',1,'cppcodegen::Indent']]],
-  ['line_5ft_21',['line_t',['../namespacecppcodegen.html#a6f2f453e300a03ac90cf866b4fcc13ff',1,'cppcodegen']]],
-  ['lines_5f_22',['lines_',['../classcppcodegen_1_1_snippet.html#acc492129675e18605b8ae304b56821a1',1,'cppcodegen::Snippet']]],
-  ['linetype_23',['LineType',['../structcppcodegen_1_1_line_type.html',1,'cppcodegen::LineType'],['../structcppcodegen_1_1_line_type.html#ac0cebc059c416e8508e598e6c3f72c44',1,'cppcodegen::LineType::LineType()'],['../namespacecppcodegen.html#ab9bae2e6364f72cb9f0e36a5a14f1415',1,'cppcodegen::LineType()']]],
-  ['local_5finclude_5ft_24',['local_include_t',['../namespacecppcodegen.html#af12f87590fcd9e95eab13a691c4f83b3',1,'cppcodegen']]],
-  ['localincludetype_25',['LocalIncludeType',['../structcppcodegen_1_1_local_include_type.html',1,'cppcodegen::LocalIncludeType'],['../structcppcodegen_1_1_local_include_type.html#a04de493b865789817f1a7a7c3ec98230',1,'cppcodegen::LocalIncludeType::LocalIncludeType()'],['../namespacecppcodegen.html#a3ef3505167e86638f562fab09a8191bf',1,'cppcodegen::LocalIncludeType()']]]
+  ['kcodeblock_17',['kCodeBlock',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aac5c4708fa30e580d695437777a453b8a',1,'cppcodegen']]],
+  ['kdefaultindentsize_18',['kDefaultIndentSize',['../namespacecppcodegen.html#a25ef7bea7d621b5e0d4b61cd2d27051a',1,'cppcodegen']]],
+  ['kdefinition_19',['kDefinition',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aa1d4903abc60127b91b9818b3f57c03da',1,'cppcodegen']]],
+  ['kline_20',['kLine',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaee669fa7b5a35d96a396d4ed648afb45',1,'cppcodegen']]],
+  ['klocalinclude_21',['kLocalInclude',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aabb9de8f74ec214cad4870ccfd333fd95',1,'cppcodegen']]],
+  ['knamespace_22',['kNamespace',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaa28886f1e6b46d18364aa513e58413c7',1,'cppcodegen']]],
+  ['ksysteminclude_23',['kSystemInclude',['../namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaa671df9bc7851a92318b2abc01f39262',1,'cppcodegen']]]
 ];

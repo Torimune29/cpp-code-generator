@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['size_5f_30',['size_',['../structcppcodegen_1_1_indent.html#a6f55f4065abd7e4375c78c9ba2bb98f4',1,'cppcodegen::Indent']]],
-  ['snippet_31',['Snippet',['../classcppcodegen_1_1_snippet.html',1,'cppcodegen::Snippet'],['../classcppcodegen_1_1_snippet.html#a9555deb81c7e9c7a340e54807685f3a8',1,'cppcodegen::Snippet::Snippet(LineType, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_snippet.html#aa19e3f2cf4cec273f6575486212d9508',1,'cppcodegen::Snippet::Snippet(SystemIncludeType, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_snippet.html#af239e51881182f3c4809258d59135ddd',1,'cppcodegen::Snippet::Snippet(LocalIncludeType, const std::string base_dir_path, const Indent &amp;indent=Indent(0, kDefaultIndentSize))']]],
-  ['snippets_5f_32',['snippets_',['../classcppcodegen_1_1_block.html#aec845cc76ffb3e8d419ac2510b931b31',1,'cppcodegen::Block']]],
-  ['snippettype_33',['SnippetType',['../namespacecppcodegen.html#a8995d2dbcfc7f83d14161a1fc880a242',1,'cppcodegen']]],
-  ['system_5finclude_5ft_34',['system_include_t',['../namespacecppcodegen.html#a018d8b324306b2f7ab5c26623d7faf61',1,'cppcodegen']]],
-  ['systemincludetype_35',['SystemIncludeType',['../structcppcodegen_1_1_system_include_type.html',1,'cppcodegen::SystemIncludeType'],['../structcppcodegen_1_1_system_include_type.html#a4fbaaa2b12714f5173951b712baa8711',1,'cppcodegen::SystemIncludeType::SystemIncludeType()'],['../namespacecppcodegen.html#a8992fb01f65360c2a26debc460c618be',1,'cppcodegen::SystemIncludeType()']]]
+  ['readme_2emd_33',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];

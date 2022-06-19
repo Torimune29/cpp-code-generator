@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['namespacetype_86',['NamespaceType',['../namespacecppcodegen.html#aab3c69e841eba3051cc088ec2e30a10d',1,'cppcodegen']]]
+  ['linetype_91',['LineType',['../namespacecppcodegen.html#ab9bae2e6364f72cb9f0e36a5a14f1415',1,'cppcodegen']]],
+  ['localincludetype_92',['LocalIncludeType',['../namespacecppcodegen.html#a3ef3505167e86638f562fab09a8191bf',1,'cppcodegen']]]
 ];
