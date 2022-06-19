@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <sstream>
+#include <unordered_map>
 #include <vector>
 
 namespace cppcodegen {
@@ -266,7 +267,13 @@ class Class {
    * @param indent
    */
   Class(const std::string &name, const Indent &indent = Indent(0, kDefaultIndentSize))
-      : indent_(indent), name_(name), header_(" {\n"), footer_("}\n"), type_(Type::kCodeBlock) {
+      : indent_(indent),
+        name_(name),
+        header_(" {\n"),
+        footer_("}\n"),
+        type_(Type::kCodeBlock),
+        snippets_(
+            {{AccessSpecifier::kPrivate, {}}, {AccessSpecifier::kPublic, {}}, {AccessSpecifier::kProtected, {}}}) {
   }
   ~Class() = default;
 
@@ -277,21 +284,21 @@ class Class {
    */
   std::string Out() const noexcept {
     std::string block = indent_.Indenting() + "class " + name_ + header_;
-    if (!public_snippets_.empty()) {
+    if (!snippets_.at(AccessSpecifier::kPublic).empty()) {
       block += indent_.Indenting() + " public:\n";
-      for (const auto &snippet : public_snippets_) {
+      for (const auto &snippet : snippets_.at(AccessSpecifier::kPublic)) {
         block += snippet.Out();
       }
     }
-    if (!protected_snippets_.empty()) {
+    if (!snippets_.at(AccessSpecifier::kProtected).empty()) {
       block += indent_.Indenting() + " protected:\n";
-      for (const auto &snippet : protected_snippets_) {
+      for (const auto &snippet : snippets_.at(AccessSpecifier::kProtected)) {
         block += snippet.Out();
       }
     }
-    if (!private_snippets_.empty()) {
+    if (!snippets_.at(AccessSpecifier::kPrivate).empty()) {
       block += indent_.Indenting() + " private:\n";
-      for (const auto &snippet : private_snippets_) {
+      for (const auto &snippet : snippets_.at(AccessSpecifier::kPrivate)) {
         block += snippet.Out();
       }
     }
@@ -306,13 +313,7 @@ class Class {
   void Add(const std::string &line, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
     Snippet snippet(line_t, Indent(indent_.level_ + 1, indent_.size_));
     snippet.Add(line);
-    if (access_specifier == AccessSpecifier::kPrivate) {
-      private_snippets_.emplace_back(std::move(snippet));
-    } else if (access_specifier == AccessSpecifier::kPublic) {
-      public_snippets_.emplace_back(std::move(snippet));
-    } else if (access_specifier == AccessSpecifier::kProtected) {
-      protected_snippets_.emplace_back(std::move(snippet));
-    }
+    snippets_[access_specifier].emplace_back(std::move(snippet));
     return;
   }
 
@@ -327,13 +328,7 @@ class Class {
   void Add(const Snippet &snippet, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
     Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
     snippet_copy.Add(snippet);
-    if (access_specifier == AccessSpecifier::kPrivate) {
-      private_snippets_.emplace_back(std::move(snippet_copy));
-    } else if (access_specifier == AccessSpecifier::kPublic) {
-      public_snippets_.emplace_back(std::move(snippet_copy));
-    } else if (access_specifier == AccessSpecifier::kProtected) {
-      protected_snippets_.emplace_back(std::move(snippet_copy));
-    }
+    snippets_[access_specifier].emplace_back(std::move(snippet_copy));
     return;
   }
 
@@ -349,14 +344,10 @@ class Class {
 
   void IncrementIndent(std::size_t size = 1) noexcept {
     indent_.level_ += size;
-    for (auto &&snippet : private_snippets_) {
-      snippet.IncrementIndent(size);
-    }
-    for (auto &&snippet : public_snippets_) {
-      snippet.IncrementIndent(size);
-    }
-    for (auto &&snippet : protected_snippets_) {
-      snippet.IncrementIndent(size);
+    for (auto &&each_snippets : snippets_) {
+      for (auto &&snippet : each_snippets.second) {
+        snippet.IncrementIndent(size);
+      }
     }
     return;
   }
@@ -367,9 +358,7 @@ class Class {
   std::string header_;
   std::string footer_;
   Type type_;
-  std::vector<Snippet> private_snippets_;
-  std::vector<Snippet> public_snippets_;
-  std::vector<Snippet> protected_snippets_;
+  std::unordered_map<AccessSpecifier, std::vector<Snippet>> snippets_;
 };
 
 }  // namespace cppcodegen
