@@ -48,7 +48,6 @@ TEST(cppcodegenTest, IncludeSnippetSystemLocalMix) {
   cppcodegen::Snippet include_1(cppcodegen::system_include_t);
   cppcodegen::Snippet include_2(cppcodegen::local_include_t, include_input_2_base_dir);
   cppcodegen::Snippet include_1_2(cppcodegen::system_include_t);
-  // line.Add(include_input_1_1);  // compile error
   include_1.Add(include_input_1_1);
   include_1.Add(include_input_1_2);
   include_2.Add(include_input_2);
