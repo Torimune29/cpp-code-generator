@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "cppcodegen", null, [
+    [ "cppcodegen", "namespacecppcodegen.html", [
       [ "LineType", "structcppcodegen_1_1_line_type.html", "structcppcodegen_1_1_line_type" ],
       [ "SystemIncludeType", "structcppcodegen_1_1_system_include_type.html", "structcppcodegen_1_1_system_include_type" ],
       [ "LocalIncludeType", "structcppcodegen_1_1_local_include_type.html", "structcppcodegen_1_1_local_include_type" ],

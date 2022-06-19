@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['out_18',['Out',['../classcppcodegen_1_1_snippet.html#a5065455adae9b977880c48468043bf6b',1,'cppcodegen::Snippet::Out()'],['../classcppcodegen_1_1_block.html#a44d3b06c8525f6135179dcf779a0bd61',1,'cppcodegen::Block::Out()']]]
+  ['block_48',['Block',['../classcppcodegen_1_1_block.html#a0c501654c043e1157444084432a8a06b',1,'cppcodegen::Block']]]
 ];
