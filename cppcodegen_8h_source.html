@@ -90,16 +90,85 @@ $(document).ready(function(){initNavTree('cppcodegen_8h_source.html',''); initRe
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>cppcodegen {</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classcppcodegen_1_1_dummy.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcppcodegen_1_1_dummy.html">Dummy</a> {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classcppcodegen_1_1_dummy.html#aafa73b853a256d54fd92edbb320554a3">    9</a></span>&#160;  <a class="code" href="classcppcodegen_1_1_dummy.html#aafa73b853a256d54fd92edbb320554a3">Dummy</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classcppcodegen_1_1_dummy.html#a1c19c7bc7f88c5c4d96b9ba81b31e5a7">   14</a></span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classcppcodegen_1_1_dummy.html#a1c19c7bc7f88c5c4d96b9ba81b31e5a7">DoSomething</a>() { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}  <span class="comment">// namespace cppcodegen</span></div>
-<div class="ttc" id="aclasscppcodegen_1_1_dummy_html"><div class="ttname"><a href="classcppcodegen_1_1_dummy.html">cppcodegen::Dummy</a></div><div class="ttdef"><b>Definition:</b> cppcodegen.h:4</div></div>
-<div class="ttc" id="aclasscppcodegen_1_1_dummy_html_a1c19c7bc7f88c5c4d96b9ba81b31e5a7"><div class="ttname"><a href="classcppcodegen_1_1_dummy.html#a1c19c7bc7f88c5c4d96b9ba81b31e5a7">cppcodegen::Dummy::DoSomething</a></div><div class="ttdeci">static bool DoSomething()</div><div class="ttdef"><b>Definition:</b> cppcodegen.h:14</div></div>
-<div class="ttc" id="aclasscppcodegen_1_1_dummy_html_aafa73b853a256d54fd92edbb320554a3"><div class="ttname"><a href="classcppcodegen_1_1_dummy.html#aafa73b853a256d54fd92edbb320554a3">cppcodegen::Dummy::Dummy</a></div><div class="ttdeci">Dummy()=default</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="structcppcodegen_1_1_line_type.html">    5</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcppcodegen_1_1_line_type.html">LineType</a> {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="structcppcodegen_1_1_line_type.html">LineType</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;} <a class="code" href="structcppcodegen_1_1_line_type.html">LineType</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;constexpr <a class="code" href="structcppcodegen_1_1_line_type.html">LineType</a> line_type_t{};</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structcppcodegen_1_1_system_include_type.html">   10</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcppcodegen_1_1_system_include_type.html">SystemIncludeType</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="structcppcodegen_1_1_system_include_type.html">SystemIncludeType</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;} <a class="code" href="structcppcodegen_1_1_system_include_type.html">SystemIncludeType</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;constexpr <a class="code" href="structcppcodegen_1_1_system_include_type.html">SystemIncludeType</a> system_include_t{};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structcppcodegen_1_1_local_include_type.html">   15</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcppcodegen_1_1_local_include_type.html">LocalIncludeType</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="structcppcodegen_1_1_local_include_type.html">LocalIncludeType</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;} <a class="code" href="structcppcodegen_1_1_local_include_type.html">LocalIncludeType</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;constexpr <a class="code" href="structcppcodegen_1_1_local_include_type.html">LocalIncludeType</a> local_include_t{};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structcppcodegen_1_1_indent.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcppcodegen_1_1_indent.html">Indent</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="structcppcodegen_1_1_indent.html">Indent</a>(std::size_t level, std::size_t size, <span class="keywordtype">char</span> character = <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      : level_(level), size_(size), character_(character) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::size_t index = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">while</span> (index &lt; size_) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      indent_string_ += character_;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      index++;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  std::size_t level_;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  std::size_t size_;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">char</span> character_;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  std::string indent_string_;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <a class="code" href="structcppcodegen_1_1_indent.html">Indent</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classcppcodegen_1_1_snippet.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcppcodegen_1_1_snippet.html">Snippet</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classcppcodegen_1_1_snippet.html">Snippet</a>(<span class="keyword">const</span> <a class="code" href="structcppcodegen_1_1_indent.html">Indent</a> &amp;indent = <a class="code" href="structcppcodegen_1_1_indent.html">Indent</a>(0, 0)) : indent_(indent) {}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classcppcodegen_1_1_snippet.html">Snippet</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> Add(Args... args) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    snippet_ += Indenting();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    add(args...);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classcppcodegen_1_1_snippet.html#a286508f4e21b36e4e1ab637b15c51415">   57</a></span>&#160;  std::string <a class="code" href="classcppcodegen_1_1_snippet.html#a286508f4e21b36e4e1ab637b15c51415">Out</a>() const noexcept { <span class="keywordflow">return</span> snippet_; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  std::string snippet_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <a class="code" href="structcppcodegen_1_1_indent.html">Indent</a> indent_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> add(<span class="keyword">const</span> <a class="code" href="classcppcodegen_1_1_snippet.html">Snippet&lt;Type&gt;</a> &amp;snippet) noexcept {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    snippet_ += snippet.Out();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> add(LineType, <span class="keyword">const</span> std::string &amp;line) noexcept {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    snippet_ += line + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  std::string Indenting() {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::string total_indent;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::size_t level = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">while</span> (level &lt;= indent_.level_) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      total_indent += indent_.indent_string_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      level++;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> total_indent;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">using</span> Line = Snippet&lt;LineType&gt;;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}  <span class="comment">// namespace cppcodegen</span></div>
+<div class="ttc" id="aclasscppcodegen_1_1_snippet_html"><div class="ttname"><a href="classcppcodegen_1_1_snippet.html">cppcodegen::Snippet</a></div><div class="ttdef"><b>Definition:</b> cppcodegen.h:40</div></div>
+<div class="ttc" id="aclasscppcodegen_1_1_snippet_html_a286508f4e21b36e4e1ab637b15c51415"><div class="ttname"><a href="classcppcodegen_1_1_snippet.html#a286508f4e21b36e4e1ab637b15c51415">cppcodegen::Snippet::Out</a></div><div class="ttdeci">std::string Out() const noexcept</div><div class="ttdoc">Out with own indent.</div><div class="ttdef"><b>Definition:</b> cppcodegen.h:57</div></div>
+<div class="ttc" id="astructcppcodegen_1_1_indent_html"><div class="ttname"><a href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></div><div class="ttdoc">Indent information holder.</div><div class="ttdef"><b>Definition:</b> cppcodegen.h:24</div></div>
+<div class="ttc" id="astructcppcodegen_1_1_line_type_html"><div class="ttname"><a href="structcppcodegen_1_1_line_type.html">cppcodegen::LineType</a></div><div class="ttdef"><b>Definition:</b> cppcodegen.h:5</div></div>
+<div class="ttc" id="astructcppcodegen_1_1_local_include_type_html"><div class="ttname"><a href="structcppcodegen_1_1_local_include_type.html">cppcodegen::LocalIncludeType</a></div><div class="ttdef"><b>Definition:</b> cppcodegen.h:15</div></div>
+<div class="ttc" id="astructcppcodegen_1_1_system_include_type_html"><div class="ttname"><a href="structcppcodegen_1_1_system_include_type.html">cppcodegen::SystemIncludeType</a></div><div class="ttdef"><b>Definition:</b> cppcodegen.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
