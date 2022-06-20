@@ -320,6 +320,24 @@ class Class {
     return;
   }
 
+  void AddInheritance(const std::string &name, AccessSpecifier access_specifier = AccessSpecifier::kPublic) noexcept {
+    std::string access_specifier_str;
+    if (access_specifier == AccessSpecifier::kPublic) {
+      access_specifier_str = "public";
+    } else if (access_specifier == AccessSpecifier::kProtected) {
+      access_specifier_str = "protected";
+    } else if (access_specifier == AccessSpecifier::kPrivate) {
+      access_specifier_str = "private";
+    }
+    if (header_.size() < 3 || header_.substr(0, 3) != " : ") {
+      header_.insert(0, " : ");
+      header_.insert(header_.size() - 3, access_specifier_str + " " + name);
+    } else {
+      header_.insert(header_.size() - 3, ", " + access_specifier_str + " " + name);
+    }
+    return;
+  }
+
  private:
   Indent indent_;
   std::string name_;

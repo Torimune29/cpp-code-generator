@@ -262,3 +262,18 @@ TEST(cppcodegenTest, ClassInNamespace) {
 
   EXPECT_EQ(namespace_block.Out(), block_expected);
 }
+
+TEST(cppcodegenTest, ClassInheritance) {
+  const std::string class_name = "TestClass";
+  const std::string inheritance = "Base";
+  const std::string block_expected = R"(class TestClass : public Base, private Base, protected Base {
+};
+)";
+
+  cppcodegen::Class class_block("TestClass");
+  class_block.AddInheritance(inheritance, cppcodegen::AccessSpecifier::kPublic);
+  class_block.AddInheritance(inheritance, cppcodegen::AccessSpecifier::kPrivate);
+  class_block.AddInheritance(inheritance, cppcodegen::AccessSpecifier::kProtected);
+
+  EXPECT_EQ(class_block.Out(), block_expected);
+}
