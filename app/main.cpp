@@ -5,7 +5,6 @@
 #include <iostream>
 #include <string>
 
-#include "ProjectInformation.h"
 #include "cppcodegen.h"
 
 /**
@@ -13,7 +12,6 @@
  *
  */
 int main(int /*argc*/, char** /*argv[]*/) {
-  std::cout << PROJECT_NAME_VERSION << std::endl;
   cppcodegen::Snippet line(cppcodegen::line_t);
 
   return 0;
