@@ -174,7 +174,7 @@ TEST(cppcodegenTest, BlockAsNamespace) {
   block_namespace_2.Add(snippet_line_1);
 
   EXPECT_EQ(block_namespace_1.Out(), namespace_expected);
-  block_namespace_1.Add(block_namespace_2);
+  block_namespace_1 << block_namespace_2;
   EXPECT_EQ(block_namespace_1.Out(), namespace_expected_combined);
 }
 
@@ -195,7 +195,7 @@ TEST(cppcodegenTest, BlockAsDefinition) {
   cppcodegen::Block block_definition(cppcodegen::definition_t, snippet_declaration);
   cppcodegen::Block block_namespace(cppcodegen::namespace_t, "Test");
   line.Add(snippet_definition);
-  block_definition.Add(line);
+  block_definition << line;
   block_namespace.Add(block_definition);
 
   EXPECT_EQ(block_definition.Out(), definition_expected);
@@ -255,7 +255,7 @@ TEST(cppcodegenTest, ClassInNamespace) {
 
   cppcodegen::Block namespace_block(cppcodegen::namespace_t, "TestNamespace");
   cppcodegen::Class class_block("TestClass");
-  class_block.Add(private_member, cppcodegen::AccessSpecifier::kPrivate);
+  class_block << private_member;
   class_block.Add(protected_member, cppcodegen::AccessSpecifier::kProtected);
   class_block.Add(public_member, cppcodegen::AccessSpecifier::kPublic);
   namespace_block.Add(class_block);
@@ -276,4 +276,19 @@ TEST(cppcodegenTest, ClassInheritance) {
   class_block.AddInheritance(inheritance, cppcodegen::AccessSpecifier::kProtected);
 
   EXPECT_EQ(class_block.Out(), block_expected);
+}
+
+TEST(cppcodegenTest, Stream) {
+  const std::string line_input = "#include <iostream>";
+  const std::string line_input_2 = "#include <string>";
+  const std::string line_output_expected = "#include <iostream>\n";
+  const std::string line_2_output_expected = "#include <string>\n#include <iostream>\n";
+
+  cppcodegen::Snippet line(cppcodegen::line_t);
+  cppcodegen::Snippet line_2(cppcodegen::line_t);
+  line << line_input;
+  line_2 << line_input_2 << line;
+
+  EXPECT_EQ(line.Out(), line_output_expected);
+  EXPECT_EQ(line_2.Out(), line_2_output_expected);
 }

@@ -347,4 +347,20 @@ class Class {
   std::unordered_map<AccessSpecifier, std::vector<Snippet>> snippets_;
 };
 
+template <typename cppcodegen_type>
+Snippet &operator<<(Snippet &value, const cppcodegen_type &another) {
+  value.Add(another);
+  return value;
+}
+template <typename cppcodegen_type>
+Block &operator<<(Block &value, const cppcodegen_type &another) {
+  value.Add(another);
+  return value;
+}
+template <typename cppcodegen_type>
+Class &operator<<(Class &value, const cppcodegen_type &another) {
+  value.Add(another);
+  return value;
+}
+
 }  // namespace cppcodegen
