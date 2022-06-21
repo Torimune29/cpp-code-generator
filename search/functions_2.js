@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['class_70',['Class',['../classcppcodegen_1_1_class.html#add0051989699e027989d08d89b7e0423',1,'cppcodegen::Class']]],
-  ['codeblocktype_71',['CodeBlockType',['../structcppcodegen_1_1_code_block_type.html#a9914afe177c18c5f5a8f3a72a637fa1c',1,'cppcodegen::CodeBlockType']]]
+  ['class_80',['Class',['../classcppcodegen_1_1_class.html#add0051989699e027989d08d89b7e0423',1,'cppcodegen::Class::Class(const std::string &amp;name, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_class.html#aac9abdf90bb111e672d9d3d42500a559',1,'cppcodegen::Class::Class(ClassType, const std::string &amp;name, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_class.html#a6c90b4cde86df3290488a8c42701add0',1,'cppcodegen::Class::Class(ClassType, const std::string &amp;name, const std::vector&lt; std::pair&lt; AccessSpecifier, std::string &gt;&gt; inheritances, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_class.html#a43e55053b2c45523110dae9bf33c73ef',1,'cppcodegen::Class::Class(StructType, const std::string &amp;name, const Indent &amp;indent=Indent(0, kDefaultIndentSize))'],['../classcppcodegen_1_1_class.html#a7ff29ca85727d8f0f3566f7d325731da',1,'cppcodegen::Class::Class(const Class &amp;)=default'],['../classcppcodegen_1_1_class.html#a1698b06da2ad090b0a0bedbac9f5158e',1,'cppcodegen::Class::Class(Class &amp;&amp;)=default']]],
+  ['classtype_81',['ClassType',['../structcppcodegen_1_1_class_type.html#a8c9e10ee95d4396d506347d181667ad0',1,'cppcodegen::ClassType']]],
+  ['codeblocktype_82',['CodeBlockType',['../structcppcodegen_1_1_code_block_type.html#a9914afe177c18c5f5a8f3a72a637fa1c',1,'cppcodegen::CodeBlockType']]]
 ];

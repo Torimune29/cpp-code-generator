@@ -127,6 +127,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_namespace_type.html">cppcodegen::NamespaceType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_class_type.html">cppcodegen::ClassType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_struct_type.html">cppcodegen::StructType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structcppcodegen_1_1_indent.html" title="Indent information holder.">Indent</a> information holder.  <a href="structcppcodegen_1_1_indent.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +163,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:aa44f9cf6e21e46b223e9c596929416f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab3c69e841eba3051cc088ec2e30a10d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_namespace_type.html">cppcodegen::NamespaceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#aab3c69e841eba3051cc088ec2e30a10d">cppcodegen::NamespaceType</a></td></tr>
 <tr class="separator:aab3c69e841eba3051cc088ec2e30a10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fefd09e67f8c67b249f50f6b9855d3b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_class_type.html">cppcodegen::ClassType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a2fefd09e67f8c67b249f50f6b9855d3b">cppcodegen::ClassType</a></td></tr>
+<tr class="separator:a2fefd09e67f8c67b249f50f6b9855d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7a5d081e3a53d41c7711673e2d844c1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_struct_type.html">cppcodegen::StructType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#aa7a5d081e3a53d41c7711673e2d844c1">cppcodegen::StructType</a></td></tr>
+<tr class="separator:aa7a5d081e3a53d41c7711673e2d844c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2df9a0f163d15bf3b5532e1e4a595a4"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#ab2df9a0f163d15bf3b5532e1e4a595a4">cppcodegen::Indent</a></td></tr>
 <tr class="memdesc:ab2df9a0f163d15bf3b5532e1e4a595a4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structcppcodegen_1_1_indent.html" title="Indent information holder.">Indent</a> information holder.  <a href="namespacecppcodegen.html#ab2df9a0f163d15bf3b5532e1e4a595a4">More...</a><br /></td></tr>
 <tr class="separator:ab2df9a0f163d15bf3b5532e1e4a595a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +181,8 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aa1d4903abc60127b91b9818b3f57c03da">cppcodegen::kDefinition</a>
 , <a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaa28886f1e6b46d18364aa513e58413c7">cppcodegen::kNamespace</a>
+, <a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaca5f49c58b1ea579a3ed3e0bc6a0d176">cppcodegen::kClass</a>
+, <a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aa37d24e1221658f0e0333a512fdbcd2f0">cppcodegen::kStruct</a>
 <br />
  }</td></tr>
 <tr class="separator:a366db303fbd794f24098f82f3a154f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,16 +194,20 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a48bfd850daa246591ec025dc1327232b"><td class="memTemplParams" colspan="2">template&lt;typename cppcodegen_type &gt; </td></tr>
-<tr class="memitem:a48bfd850daa246591ec025dc1327232b"><td class="memTemplItemLeft" align="right" valign="top">Snippet &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a48bfd850daa246591ec025dc1327232b">cppcodegen::operator&lt;&lt;</a> (Snippet &amp;value, const cppcodegen_type &amp;another)</td></tr>
-<tr class="separator:a48bfd850daa246591ec025dc1327232b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a979b19d23d78a1b6939866b6ba45f5d1"><td class="memTemplParams" colspan="2">template&lt;typename cppcodegen_type &gt; </td></tr>
-<tr class="memitem:a979b19d23d78a1b6939866b6ba45f5d1"><td class="memTemplItemLeft" align="right" valign="top">Block &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a979b19d23d78a1b6939866b6ba45f5d1">cppcodegen::operator&lt;&lt;</a> (Block &amp;value, const cppcodegen_type &amp;another)</td></tr>
-<tr class="separator:a979b19d23d78a1b6939866b6ba45f5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf2571e1562042d2ca0085a12710b555"><td class="memTemplParams" colspan="2">template&lt;typename cppcodegen_type &gt; </td></tr>
-<tr class="memitem:acf2571e1562042d2ca0085a12710b555"><td class="memTemplItemLeft" align="right" valign="top">Class &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#acf2571e1562042d2ca0085a12710b555">cppcodegen::operator&lt;&lt;</a> (Class &amp;value, const cppcodegen_type &amp;another)</td></tr>
-<tr class="separator:acf2571e1562042d2ca0085a12710b555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f63707d4c23b77346421cc9bdf8f168"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6f63707d4c23b77346421cc9bdf8f168"><td class="memTemplItemLeft" align="right" valign="top">Snippet &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a6f63707d4c23b77346421cc9bdf8f168">cppcodegen::operator&lt;&lt;</a> (Snippet &amp;value, const T &amp;another)</td></tr>
+<tr class="memdesc:a6f63707d4c23b77346421cc9bdf8f168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for snippet.  <a href="namespacecppcodegen.html#a6f63707d4c23b77346421cc9bdf8f168">More...</a><br /></td></tr>
+<tr class="separator:a6f63707d4c23b77346421cc9bdf8f168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e3fc08b03b7068a055b4d729fe865fc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6e3fc08b03b7068a055b4d729fe865fc"><td class="memTemplItemLeft" align="right" valign="top">Block &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a6e3fc08b03b7068a055b4d729fe865fc">cppcodegen::operator&lt;&lt;</a> (Block &amp;value, const T &amp;another)</td></tr>
+<tr class="memdesc:a6e3fc08b03b7068a055b4d729fe865fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for block.  <a href="namespacecppcodegen.html#a6e3fc08b03b7068a055b4d729fe865fc">More...</a><br /></td></tr>
+<tr class="separator:a6e3fc08b03b7068a055b4d729fe865fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="memTemplItemLeft" align="right" valign="top">Class &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#abf87b6a5fd1d8e5c2513dd41e820f3fb">cppcodegen::operator&lt;&lt;</a> (Class &amp;value, const T &amp;another)</td></tr>
+<tr class="memdesc:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for class.  <a href="namespacecppcodegen.html#abf87b6a5fd1d8e5c2513dd41e820f3fb">More...</a><br /></td></tr>
+<tr class="separator:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea4f7490ce8fedb58155dcdc17d0a37d"><td class="memItemLeft" align="right" valign="top">Class &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#aea4f7490ce8fedb58155dcdc17d0a37d">cppcodegen::operator&lt;&lt;</a> (Class &amp;value, AccessSpecifier access_specifier)</td></tr>
+<tr class="memdesc:aea4f7490ce8fedb58155dcdc17d0a37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for class access specifier.  <a href="namespacecppcodegen.html#aea4f7490ce8fedb58155dcdc17d0a37d">More...</a><br /></td></tr>
 <tr class="separator:aea4f7490ce8fedb58155dcdc17d0a37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -212,6 +226,10 @@ Variables</h2></td></tr>
 <tr class="separator:a00f16d1fbcc58ae0b17c4a6fec354731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47a51abcf04215b3f49a5333b1e20825"><td class="memItemLeft" align="right" valign="top">constexpr NamespaceType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a47a51abcf04215b3f49a5333b1e20825">cppcodegen::namespace_t</a> {}</td></tr>
 <tr class="separator:a47a51abcf04215b3f49a5333b1e20825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1165f2a7354cf662e95ef61b9d8eddfc"><td class="memItemLeft" align="right" valign="top">constexpr ClassType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a1165f2a7354cf662e95ef61b9d8eddfc">cppcodegen::class_t</a> {}</td></tr>
+<tr class="separator:a1165f2a7354cf662e95ef61b9d8eddfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27657121f2682a0796c5f0ec58fc9546"><td class="memItemLeft" align="right" valign="top">constexpr StructType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a27657121f2682a0796c5f0ec58fc9546">cppcodegen::struct_t</a> {}</td></tr>
+<tr class="separator:a27657121f2682a0796c5f0ec58fc9546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

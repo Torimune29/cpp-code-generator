@@ -108,6 +108,10 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_namespace_type.html">NamespaceType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_class_type.html">ClassType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_struct_type.html">StructType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppcodegen_1_1_indent.html">Indent</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structcppcodegen_1_1_indent.html" title="Indent information holder.">Indent</a> information holder.  <a href="structcppcodegen_1_1_indent.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +139,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:aa44f9cf6e21e46b223e9c596929416f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab3c69e841eba3051cc088ec2e30a10d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_namespace_type.html">cppcodegen::NamespaceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#aab3c69e841eba3051cc088ec2e30a10d">NamespaceType</a></td></tr>
 <tr class="separator:aab3c69e841eba3051cc088ec2e30a10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fefd09e67f8c67b249f50f6b9855d3b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_class_type.html">cppcodegen::ClassType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a2fefd09e67f8c67b249f50f6b9855d3b">ClassType</a></td></tr>
+<tr class="separator:a2fefd09e67f8c67b249f50f6b9855d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7a5d081e3a53d41c7711673e2d844c1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_struct_type.html">cppcodegen::StructType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#aa7a5d081e3a53d41c7711673e2d844c1">StructType</a></td></tr>
+<tr class="separator:aa7a5d081e3a53d41c7711673e2d844c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2df9a0f163d15bf3b5532e1e4a595a4"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcppcodegen_1_1_indent.html">cppcodegen::Indent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#ab2df9a0f163d15bf3b5532e1e4a595a4">Indent</a></td></tr>
 <tr class="memdesc:ab2df9a0f163d15bf3b5532e1e4a595a4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structcppcodegen_1_1_indent.html" title="Indent information holder.">Indent</a> information holder.  <a href="namespacecppcodegen.html#ab2df9a0f163d15bf3b5532e1e4a595a4">More...</a><br /></td></tr>
 <tr class="separator:ab2df9a0f163d15bf3b5532e1e4a595a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +157,8 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aa1d4903abc60127b91b9818b3f57c03da">kDefinition</a>
 , <a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaa28886f1e6b46d18364aa513e58413c7">kNamespace</a>
+, <a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaca5f49c58b1ea579a3ed3e0bc6a0d176">kClass</a>
+, <a class="el" href="namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aa37d24e1221658f0e0333a512fdbcd2f0">kStruct</a>
 <br />
  }</td></tr>
 <tr class="separator:a366db303fbd794f24098f82f3a154f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,16 +170,20 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a48bfd850daa246591ec025dc1327232b"><td class="memTemplParams" colspan="2">template&lt;typename cppcodegen_type &gt; </td></tr>
-<tr class="memitem:a48bfd850daa246591ec025dc1327232b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppcodegen_1_1_snippet.html">Snippet</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a48bfd850daa246591ec025dc1327232b">operator&lt;&lt;</a> (<a class="el" href="classcppcodegen_1_1_snippet.html">Snippet</a> &amp;value, const cppcodegen_type &amp;another)</td></tr>
-<tr class="separator:a48bfd850daa246591ec025dc1327232b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a979b19d23d78a1b6939866b6ba45f5d1"><td class="memTemplParams" colspan="2">template&lt;typename cppcodegen_type &gt; </td></tr>
-<tr class="memitem:a979b19d23d78a1b6939866b6ba45f5d1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppcodegen_1_1_block.html">Block</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a979b19d23d78a1b6939866b6ba45f5d1">operator&lt;&lt;</a> (<a class="el" href="classcppcodegen_1_1_block.html">Block</a> &amp;value, const cppcodegen_type &amp;another)</td></tr>
-<tr class="separator:a979b19d23d78a1b6939866b6ba45f5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf2571e1562042d2ca0085a12710b555"><td class="memTemplParams" colspan="2">template&lt;typename cppcodegen_type &gt; </td></tr>
-<tr class="memitem:acf2571e1562042d2ca0085a12710b555"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppcodegen_1_1_class.html">Class</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#acf2571e1562042d2ca0085a12710b555">operator&lt;&lt;</a> (<a class="el" href="classcppcodegen_1_1_class.html">Class</a> &amp;value, const cppcodegen_type &amp;another)</td></tr>
-<tr class="separator:acf2571e1562042d2ca0085a12710b555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f63707d4c23b77346421cc9bdf8f168"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6f63707d4c23b77346421cc9bdf8f168"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppcodegen_1_1_snippet.html">Snippet</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a6f63707d4c23b77346421cc9bdf8f168">operator&lt;&lt;</a> (<a class="el" href="classcppcodegen_1_1_snippet.html">Snippet</a> &amp;value, const T &amp;another)</td></tr>
+<tr class="memdesc:a6f63707d4c23b77346421cc9bdf8f168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for snippet.  <a href="namespacecppcodegen.html#a6f63707d4c23b77346421cc9bdf8f168">More...</a><br /></td></tr>
+<tr class="separator:a6f63707d4c23b77346421cc9bdf8f168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e3fc08b03b7068a055b4d729fe865fc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6e3fc08b03b7068a055b4d729fe865fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppcodegen_1_1_block.html">Block</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a6e3fc08b03b7068a055b4d729fe865fc">operator&lt;&lt;</a> (<a class="el" href="classcppcodegen_1_1_block.html">Block</a> &amp;value, const T &amp;another)</td></tr>
+<tr class="memdesc:a6e3fc08b03b7068a055b4d729fe865fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for block.  <a href="namespacecppcodegen.html#a6e3fc08b03b7068a055b4d729fe865fc">More...</a><br /></td></tr>
+<tr class="separator:a6e3fc08b03b7068a055b4d729fe865fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppcodegen_1_1_class.html">Class</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#abf87b6a5fd1d8e5c2513dd41e820f3fb">operator&lt;&lt;</a> (<a class="el" href="classcppcodegen_1_1_class.html">Class</a> &amp;value, const T &amp;another)</td></tr>
+<tr class="memdesc:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for class.  <a href="namespacecppcodegen.html#abf87b6a5fd1d8e5c2513dd41e820f3fb">More...</a><br /></td></tr>
+<tr class="separator:abf87b6a5fd1d8e5c2513dd41e820f3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea4f7490ce8fedb58155dcdc17d0a37d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcppcodegen_1_1_class.html">Class</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#aea4f7490ce8fedb58155dcdc17d0a37d">operator&lt;&lt;</a> (<a class="el" href="classcppcodegen_1_1_class.html">Class</a> &amp;value, <a class="el" href="namespacecppcodegen.html#ac1003fe6b06e79e4e954d9bb1c19f9ab">AccessSpecifier</a> access_specifier)</td></tr>
+<tr class="memdesc:aea4f7490ce8fedb58155dcdc17d0a37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for class access specifier.  <a href="namespacecppcodegen.html#aea4f7490ce8fedb58155dcdc17d0a37d">More...</a><br /></td></tr>
 <tr class="separator:aea4f7490ce8fedb58155dcdc17d0a37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -188,8 +202,26 @@ Variables</h2></td></tr>
 <tr class="separator:a00f16d1fbcc58ae0b17c4a6fec354731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47a51abcf04215b3f49a5333b1e20825"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structcppcodegen_1_1_namespace_type.html">NamespaceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a47a51abcf04215b3f49a5333b1e20825">namespace_t</a> {}</td></tr>
 <tr class="separator:a47a51abcf04215b3f49a5333b1e20825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1165f2a7354cf662e95ef61b9d8eddfc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structcppcodegen_1_1_class_type.html">ClassType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a1165f2a7354cf662e95ef61b9d8eddfc">class_t</a> {}</td></tr>
+<tr class="separator:a1165f2a7354cf662e95ef61b9d8eddfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27657121f2682a0796c5f0ec58fc9546"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structcppcodegen_1_1_struct_type.html">StructType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppcodegen.html#a27657121f2682a0796c5f0ec58fc9546">struct_t</a> {}</td></tr>
+<tr class="separator:a27657121f2682a0796c5f0ec58fc9546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2fefd09e67f8c67b249f50f6b9855d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fefd09e67f8c67b249f50f6b9855d3b">&#9670;&nbsp;</a></span>ClassType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcppcodegen_1_1_class_type.html">cppcodegen::ClassType</a> <a class="el" href="structcppcodegen_1_1_class_type.html">cppcodegen::ClassType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8c32c115248a792c5c448eb456f26901"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c32c115248a792c5c448eb456f26901">&#9670;&nbsp;</a></span>CodeBlockType</h2>
 
@@ -276,6 +308,20 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aa7a5d081e3a53d41c7711673e2d844c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a5d081e3a53d41c7711673e2d844c1">&#9670;&nbsp;</a></span>StructType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcppcodegen_1_1_struct_type.html">cppcodegen::StructType</a> <a class="el" href="structcppcodegen_1_1_struct_type.html">cppcodegen::StructType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a8992fb01f65360c2a26debc460c618be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8992fb01f65360c2a26debc460c618be">&#9670;&nbsp;</a></span>SystemIncludeType</h2>
 
@@ -344,18 +390,20 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a366db303fbd794f24098f82f3a154f0aac5c4708fa30e580d695437777a453b8a"></a>kCodeBlock&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a366db303fbd794f24098f82f3a154f0aa1d4903abc60127b91b9818b3f57c03da"></a>kDefinition&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a366db303fbd794f24098f82f3a154f0aaa28886f1e6b46d18364aa513e58413c7"></a>kNamespace&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a366db303fbd794f24098f82f3a154f0aaca5f49c58b1ea579a3ed3e0bc6a0d176"></a>kClass&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a366db303fbd794f24098f82f3a154f0aa37d24e1221658f0e0333a512fdbcd2f0"></a>kStruct&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a979b19d23d78a1b6939866b6ba45f5d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a979b19d23d78a1b6939866b6ba45f5d1">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/4]</span></h2>
+<a id="a6e3fc08b03b7068a055b4d729fe865fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e3fc08b03b7068a055b4d729fe865fc">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename cppcodegen_type &gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcppcodegen_1_1_block.html">Block</a>&amp; cppcodegen::operator&lt;&lt; </td>
@@ -366,7 +414,7 @@ template&lt;typename cppcodegen_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const cppcodegen_type &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>another</em>&#160;</td>
         </tr>
         <tr>
@@ -376,12 +424,28 @@ template&lt;typename cppcodegen_type &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stream operator for block. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">another</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcppcodegen_1_1_block.html" title="Codeblock.">Block</a>&amp; </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacecppcodegen_a979b19d23d78a1b6939866b6ba45f5d1_cgraph.png" border="0" usemap="#anamespacecppcodegen_a979b19d23d78a1b6939866b6ba45f5d1_cgraph" alt=""/></div>
-<map name="anamespacecppcodegen_a979b19d23d78a1b6939866b6ba45f5d1_cgraph" id="anamespacecppcodegen_a979b19d23d78a1b6939866b6ba45f5d1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,191,32"/>
+<div class="center"><img src="namespacecppcodegen_a6e3fc08b03b7068a055b4d729fe865fc_cgraph.png" border="0" usemap="#anamespacecppcodegen_a6e3fc08b03b7068a055b4d729fe865fc_cgraph" alt=""/></div>
+<map name="anamespacecppcodegen_a6e3fc08b03b7068a055b4d729fe865fc_cgraph" id="anamespacecppcodegen_a6e3fc08b03b7068a055b4d729fe865fc_cgraph">
+<area shape="rect" title="Stream operator for block." alt="" coords="5,5,191,32"/>
 <area shape="rect" href="classcppcodegen_1_1_block.html#ae466955e95050730cd0b3b71b478ed98" title=" " alt="" coords="239,5,416,32"/>
 </map>
 </div>
@@ -413,25 +477,35 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stream operator for class access specifier. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">access_specifier</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcppcodegen_1_1_class.html" title="Class and Struct.">Class</a>&amp; </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacecppcodegen_aea4f7490ce8fedb58155dcdc17d0a37d_cgraph.png" border="0" usemap="#anamespacecppcodegen_aea4f7490ce8fedb58155dcdc17d0a37d_cgraph" alt=""/></div>
 <map name="anamespacecppcodegen_aea4f7490ce8fedb58155dcdc17d0a37d_cgraph" id="anamespacecppcodegen_aea4f7490ce8fedb58155dcdc17d0a37d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,191,39"/>
+<area shape="rect" title="Stream operator for class access specifier." alt="" coords="5,13,191,39"/>
 <area shape="rect" href="classcppcodegen_1_1_class.html#a33083c7bba3aac58ce60d15756e89816" title=" " alt="" coords="239,5,389,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="acf2571e1562042d2ca0085a12710b555"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf2571e1562042d2ca0085a12710b555">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/4]</span></h2>
+<a id="abf87b6a5fd1d8e5c2513dd41e820f3fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf87b6a5fd1d8e5c2513dd41e820f3fb">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename cppcodegen_type &gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcppcodegen_1_1_class.html">Class</a>&amp; cppcodegen::operator&lt;&lt; </td>
@@ -442,7 +516,7 @@ template&lt;typename cppcodegen_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const cppcodegen_type &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>another</em>&#160;</td>
         </tr>
         <tr>
@@ -452,25 +526,41 @@ template&lt;typename cppcodegen_type &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stream operator for class. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">another</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcppcodegen_1_1_class.html" title="Class and Struct.">Class</a>&amp; </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacecppcodegen_acf2571e1562042d2ca0085a12710b555_cgraph.png" border="0" usemap="#anamespacecppcodegen_acf2571e1562042d2ca0085a12710b555_cgraph" alt=""/></div>
-<map name="anamespacecppcodegen_acf2571e1562042d2ca0085a12710b555_cgraph" id="anamespacecppcodegen_acf2571e1562042d2ca0085a12710b555_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,191,32"/>
+<div class="center"><img src="namespacecppcodegen_abf87b6a5fd1d8e5c2513dd41e820f3fb_cgraph.png" border="0" usemap="#anamespacecppcodegen_abf87b6a5fd1d8e5c2513dd41e820f3fb_cgraph" alt=""/></div>
+<map name="anamespacecppcodegen_abf87b6a5fd1d8e5c2513dd41e820f3fb_cgraph" id="anamespacecppcodegen_abf87b6a5fd1d8e5c2513dd41e820f3fb_cgraph">
+<area shape="rect" title="Stream operator for class." alt="" coords="5,5,191,32"/>
 <area shape="rect" href="classcppcodegen_1_1_class.html#a63a7c1f6160615c5cb369d0d9e85711d" title=" " alt="" coords="239,5,415,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a48bfd850daa246591ec025dc1327232b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48bfd850daa246591ec025dc1327232b">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/4]</span></h2>
+<a id="a6f63707d4c23b77346421cc9bdf8f168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f63707d4c23b77346421cc9bdf8f168">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename cppcodegen_type &gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcppcodegen_1_1_snippet.html">Snippet</a>&amp; cppcodegen::operator&lt;&lt; </td>
@@ -481,7 +571,7 @@ template&lt;typename cppcodegen_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const cppcodegen_type &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>another</em>&#160;</td>
         </tr>
         <tr>
@@ -491,12 +581,28 @@ template&lt;typename cppcodegen_type &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stream operator for snippet. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">another</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcppcodegen_1_1_snippet.html" title="Snippet.">Snippet</a>&amp; </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacecppcodegen_a48bfd850daa246591ec025dc1327232b_cgraph.png" border="0" usemap="#anamespacecppcodegen_a48bfd850daa246591ec025dc1327232b_cgraph" alt=""/></div>
-<map name="anamespacecppcodegen_a48bfd850daa246591ec025dc1327232b_cgraph" id="anamespacecppcodegen_a48bfd850daa246591ec025dc1327232b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,191,32"/>
+<div class="center"><img src="namespacecppcodegen_a6f63707d4c23b77346421cc9bdf8f168_cgraph.png" border="0" usemap="#anamespacecppcodegen_a6f63707d4c23b77346421cc9bdf8f168_cgraph" alt=""/></div>
+<map name="anamespacecppcodegen_a6f63707d4c23b77346421cc9bdf8f168_cgraph" id="anamespacecppcodegen_a6f63707d4c23b77346421cc9bdf8f168_cgraph">
+<area shape="rect" title="Stream operator for snippet." alt="" coords="5,5,191,32"/>
 <area shape="rect" href="classcppcodegen_1_1_snippet.html#a9fdcb780e57f7b2ad65016369d3fd962" title=" " alt="" coords="239,5,429,32"/>
 </map>
 </div>
@@ -504,6 +610,28 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a1165f2a7354cf662e95ef61b9d8eddfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1165f2a7354cf662e95ef61b9d8eddfc">&#9670;&nbsp;</a></span>class_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structcppcodegen_1_1_class_type.html">ClassType</a> cppcodegen::class_t {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7838760f24938134984374a6ecaa01fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7838760f24938134984374a6ecaa01fc">&#9670;&nbsp;</a></span>code_block_t</h2>
 
@@ -617,6 +745,28 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr <a class="el" href="structcppcodegen_1_1_namespace_type.html">NamespaceType</a> cppcodegen::namespace_t {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27657121f2682a0796c5f0ec58fc9546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27657121f2682a0796c5f0ec58fc9546">&#9670;&nbsp;</a></span>struct_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structcppcodegen_1_1_struct_type.html">StructType</a> cppcodegen::struct_t {}</td>
         </tr>
       </table>
   </td>
