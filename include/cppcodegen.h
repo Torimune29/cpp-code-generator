@@ -451,7 +451,7 @@ class Class {
  * @return Snippet&
  */
 template <typename T>
-Snippet &operator<<(Snippet &value, const T &another) {
+inline Snippet &operator<<(Snippet &value, const T &another) {
   value.Add(another);
   return value;
 }
@@ -464,7 +464,7 @@ Snippet &operator<<(Snippet &value, const T &another) {
  * @return Block&
  */
 template <typename T>
-Block &operator<<(Block &value, const T &another) {
+inline Block &operator<<(Block &value, const T &another) {
   value.Add(another);
   return value;
 }
@@ -477,7 +477,7 @@ Block &operator<<(Block &value, const T &another) {
  * @return Class&
  */
 template <typename T>
-Class &operator<<(Class &value, const T &another) {
+inline Class &operator<<(Class &value, const T &another) {
   value.Add(another);
   return value;
 }
@@ -488,7 +488,7 @@ Class &operator<<(Class &value, const T &another) {
  * @param access_specifier
  * @return Class&
  */
-Class &operator<<(Class &value, AccessSpecifier access_specifier) {
+inline Class &operator<<(Class &value, AccessSpecifier access_specifier) {
   value.SetAccessSpecifier(access_specifier);
   return value;
 }
