@@ -6,7 +6,7 @@ option(ENABLE_GOOGLETESTS "Include tests in the library. Setting this to OFF wil
 # List all files containing tests. (Change as needed)
 set(TESTFILES # All .cpp files in tests/
     main.cpp
-    dummy.cpp
+    unit_tests_cppcodegen.cpp
 )
 
 set(TEST_MAIN unit_tests_${LIBRARY_NAME}) # Default name for test executable (change if you wish).

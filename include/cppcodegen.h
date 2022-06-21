@@ -136,6 +136,10 @@ class Snippet {
     }
     return;
   }
+  void Add(const char any[]) noexcept {
+    Add(std::string(any));
+    return;
+  }
 
   void Add(const std::vector<std::string> &lines) noexcept {
     for (const auto &line : lines) {
@@ -256,8 +260,8 @@ class Class {
         header_(" {\n"),
         footer_("};\n"),
         type_(Type::kCodeBlock),
-        snippets_(
-            {{AccessSpecifier::kPrivate, {}}, {AccessSpecifier::kPublic, {}}, {AccessSpecifier::kProtected, {}}}) {
+        snippets_({{AccessSpecifier::kPrivate, {}}, {AccessSpecifier::kPublic, {}}, {AccessSpecifier::kProtected, {}}}),
+        now_specifier_(AccessSpecifier::kPrivate) {
   }
   ~Class() = default;
 
@@ -294,19 +298,18 @@ class Class {
     return type_;
   }
 
-  void Add(const std::vector<std::string> &lines,
-           AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
+  void Add(const std::vector<std::string> &lines) noexcept {
     for (const auto &line : lines) {
-      Add(line, access_specifier);
+      Add(line);
     }
     return;
   }
 
   template <typename T>
-  void Add(const T &any, AccessSpecifier access_specifier = AccessSpecifier::kPrivate) noexcept {
+  void Add(const T &any) noexcept {
     Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
     snippet_copy.Add(any);
-    snippets_[access_specifier].emplace_back(std::move(snippet_copy));
+    snippets_[now_specifier_].emplace_back(std::move(snippet_copy));
     return;
   }
 
@@ -338,6 +341,10 @@ class Class {
     return;
   }
 
+  void SetAccessSpecifier(AccessSpecifier access_specifier) {
+    now_specifier_ = access_specifier;
+  }
+
  private:
   Indent indent_;
   std::string name_;
@@ -345,6 +352,7 @@ class Class {
   std::string footer_;
   Type type_;
   std::unordered_map<AccessSpecifier, std::vector<Snippet>> snippets_;
+  AccessSpecifier now_specifier_;
 };
 
 template <typename cppcodegen_type>
@@ -360,6 +368,10 @@ Block &operator<<(Block &value, const cppcodegen_type &another) {
 template <typename cppcodegen_type>
 Class &operator<<(Class &value, const cppcodegen_type &another) {
   value.Add(another);
+  return value;
+}
+Class &operator<<(Class &value, AccessSpecifier access_specifier) {
+  value.SetAccessSpecifier(access_specifier);
   return value;
 }
 

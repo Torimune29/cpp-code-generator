@@ -226,9 +226,9 @@ TEST(cppcodegenTest, Class) {
   };
 )";
   cppcodegen::Class class_block("TestClass");
-  class_block.Add(private_member, cppcodegen::AccessSpecifier::kPrivate);
-  class_block.Add(protected_member, cppcodegen::AccessSpecifier::kProtected);
-  class_block.Add(public_member, cppcodegen::AccessSpecifier::kPublic);
+  class_block << cppcodegen::AccessSpecifier::kPublic << public_member;
+  class_block << cppcodegen::AccessSpecifier::kProtected << protected_member;
+  class_block << cppcodegen::AccessSpecifier::kPrivate << private_member;
 
   EXPECT_EQ(class_block.Out(), block_expected);
   class_block.IncrementIndent();
@@ -256,8 +256,8 @@ TEST(cppcodegenTest, ClassInNamespace) {
   cppcodegen::Block namespace_block(cppcodegen::namespace_t, "TestNamespace");
   cppcodegen::Class class_block("TestClass");
   class_block << private_member;
-  class_block.Add(protected_member, cppcodegen::AccessSpecifier::kProtected);
-  class_block.Add(public_member, cppcodegen::AccessSpecifier::kPublic);
+  class_block << cppcodegen::AccessSpecifier::kProtected << protected_member;
+  class_block << cppcodegen::AccessSpecifier::kPublic << public_member;
   namespace_block.Add(class_block);
 
   EXPECT_EQ(namespace_block.Out(), block_expected);
