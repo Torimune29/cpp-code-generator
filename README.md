@@ -116,7 +116,7 @@ namespace TestNamespace {
   // snippet, block, and class supports custom indent level and spaces
   cppcodegen::Block main_context_more_indent(
       cppcodegen::definition_t, "int main(int argc, char**argv[])",
-      cppcodegen::Indent(2, 4));  // this is indent level 1 (default: 0), indent 4 spaces (default: 2)
+      cppcodegen::Indent(2, 4));  // this is indent level 2 (default: 0), indent 4 spaces (default: 2)
   std::cout << main_context_more_indent.Out() << "------" << std::endl;
   /* std out is ...
         int main(int argc, char** argv[]) {
