@@ -292,3 +292,11 @@ TEST(cppcodegenTest, Stream) {
   EXPECT_EQ(line.Out(), line_output_expected);
   EXPECT_EQ(line_2.Out(), line_2_output_expected);
 }
+
+TEST(cppcodegenTest, SpecialMemberFunctionMove) {
+  cppcodegen::Snippet line(cppcodegen::line_t);
+  line << "test";
+  line.IncrementIndent();
+  cppcodegen::Snippet line_2(std::move(line));
+  EXPECT_EQ(line_2.Out(), "  test\n");
+}

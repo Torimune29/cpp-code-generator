@@ -8,6 +8,8 @@ namespace cppcodegen {
 
 const std::size_t kDefaultIndentSize = 2;
 
+// previous declaration
+
 typedef struct LineType {
   explicit LineType() = default;
 } LineType;
@@ -26,6 +28,12 @@ typedef struct DefinitionType {
 typedef struct NamespaceType {
   explicit NamespaceType() = default;
 } NamespaceType;
+typedef struct ClassType {
+  explicit ClassType() = default;
+} ClassType;
+typedef struct StructType {
+  explicit StructType() = default;
+} StructType;
 
 constexpr LineType line_t{};
 constexpr SystemIncludeType system_include_t{};
@@ -33,8 +41,10 @@ constexpr LocalIncludeType local_include_t{};
 constexpr CodeBlockType code_block_t{};
 constexpr DefinitionType definition_t{};
 constexpr NamespaceType namespace_t{};
+constexpr ClassType class_t{};
+constexpr StructType struct_t{};
 
-enum class Type { kLine, kSystemInclude, kLocalInclude, kCodeBlock, kDefinition, kNamespace };
+enum class Type { kLine, kSystemInclude, kLocalInclude, kCodeBlock, kDefinition, kNamespace, kClass, kStruct };
 enum class AccessSpecifier { kPublic, kProtected, kPrivate };
 
 /**
@@ -50,6 +60,12 @@ typedef struct Indent {
       index++;
     }
   }
+  ~Indent() = default;
+  Indent(const Indent &) = default;
+  Indent &operator=(const Indent &) = default;
+  Indent(Indent &&) = default;
+  Indent &operator=(Indent &&) = default;
+
   std::size_t level_;
   std::size_t size_;
   char character_;
@@ -72,6 +88,13 @@ typedef struct Indent {
  */
 class Snippet {
  public:
+  /**
+   * @brief Construct a new Snippet object as default : Line
+   *
+   * @param indent
+   */
+  Snippet(const Indent &indent = Indent(0, kDefaultIndentSize)) : Snippet(LineType(), indent) {
+  }
   /**
    * @brief Construct a new Snippet object as Line
    *
@@ -98,6 +121,10 @@ class Snippet {
       : indent_(indent), header_("#include \"" + base_dir_path), footer_("\""), type_(Type::kLocalInclude) {
   }
   ~Snippet() = default;
+  Snippet(const Snippet &) = default;
+  Snippet &operator=(const Snippet &) = default;
+  Snippet(Snippet &&) = default;
+  Snippet &operator=(Snippet &&) = default;
 
   /**
    * @brief Out with own indent
@@ -136,8 +163,8 @@ class Snippet {
     }
     return;
   }
-  void Add(const char any[]) noexcept {
-    Add(std::string(any));
+  void Add(const char characters[]) noexcept {
+    Add(std::string(characters));
     return;
   }
 
@@ -168,6 +195,13 @@ class Snippet {
 class Block {
  public:
   /**
+   * @brief Construct a new Block object as default : codeblock
+   *
+   * @param indent
+   */
+  Block(const Indent &indent = Indent(0, kDefaultIndentSize)) : Block(CodeBlockType(), indent) {
+  }
+  /**
    * @brief Construct a new Block object as codeblock
    *
    * @param indent
@@ -193,6 +227,10 @@ class Block {
       : indent_(indent), header_("namespace " + name + " {\n"), footer_("}\n"), type_(Type::kNamespace) {
   }
   ~Block() = default;
+  Block(const Block &) = default;
+  Block &operator=(const Block &) = default;
+  Block(Block &&) = default;
+  Block &operator=(Block &&) = default;
 
   /**
    * @brief Out with own indent
@@ -250,20 +288,73 @@ class Block {
 class Class {
  public:
   /**
-   * @brief Construct a new Block object as codeblock
+   * @brief Construct a new Class object default : class
    *
+   * @param name
    * @param indent
    */
   Class(const std::string &name, const Indent &indent = Indent(0, kDefaultIndentSize))
+      : Class(ClassType(), name, indent) {
+  }
+  /**
+   * @brief Construct a new Class object as class
+   *
+   * @param name
+   * @param indent
+   * @details
+   * default access specifier is private.
+   */
+  Class(ClassType, const std::string &name, const Indent &indent = Indent(0, kDefaultIndentSize))
       : indent_(indent),
         name_(name),
         header_(" {\n"),
         footer_("};\n"),
-        type_(Type::kCodeBlock),
+        type_(Type::kClass),
         snippets_({{AccessSpecifier::kPrivate, {}}, {AccessSpecifier::kPublic, {}}, {AccessSpecifier::kProtected, {}}}),
         now_specifier_(AccessSpecifier::kPrivate) {
   }
+  /**
+   * @brief Construct a new Class object as class with inheritances
+   *
+   * @param name
+   * @param inheritances inheritance access specifiers and class names
+   * @param indent
+   */
+  Class(ClassType, const std::string &name, const std::vector<std::pair<AccessSpecifier, std::string>> inheritances,
+        const Indent &indent = Indent(0, kDefaultIndentSize))
+      : indent_(indent),
+        name_(name),
+        header_(" {\n"),
+        footer_("};\n"),
+        type_(Type::kClass),
+        snippets_({{AccessSpecifier::kPrivate, {}}, {AccessSpecifier::kPublic, {}}, {AccessSpecifier::kProtected, {}}}),
+        now_specifier_(AccessSpecifier::kPrivate) {
+    for (const auto &inheritance : inheritances) {
+      AddInheritance(inheritance.second, inheritance.first);
+    }
+  }
+  /**
+   * @brief Construct a new Class object as struct
+   *
+   * @param name
+   * @param indent
+   * @details
+   * default access specifier is public.
+   */
+  Class(StructType, const std::string &name, const Indent &indent = Indent(0, kDefaultIndentSize))
+      : indent_(indent),
+        name_(name),
+        header_(" {\n"),
+        footer_("};\n"),
+        type_(Type::kStruct),
+        snippets_({{AccessSpecifier::kPrivate, {}}, {AccessSpecifier::kPublic, {}}, {AccessSpecifier::kProtected, {}}}),
+        now_specifier_(AccessSpecifier::kPublic) {
+  }
   ~Class() = default;
+  Class(const Class &) = default;
+  Class &operator=(const Class &) = default;
+  Class(Class &&) = default;
+  Class &operator=(Class &&) = default;
 
   /**
    * @brief Out with own indent
@@ -355,21 +446,52 @@ class Class {
   AccessSpecifier now_specifier_;
 };
 
-template <typename cppcodegen_type>
-Snippet &operator<<(Snippet &value, const cppcodegen_type &another) {
+/**
+ * @brief Stream operator for snippet
+ *
+ * @tparam T
+ * @param value
+ * @param another
+ * @return Snippet&
+ */
+template <typename T>
+Snippet &operator<<(Snippet &value, const T &another) {
   value.Add(another);
   return value;
 }
-template <typename cppcodegen_type>
-Block &operator<<(Block &value, const cppcodegen_type &another) {
+/**
+ * @brief Stream operator for block
+ *
+ * @tparam T
+ * @param value
+ * @param another
+ * @return Block&
+ */
+template <typename T>
+Block &operator<<(Block &value, const T &another) {
   value.Add(another);
   return value;
 }
-template <typename cppcodegen_type>
-Class &operator<<(Class &value, const cppcodegen_type &another) {
+/**
+ * @brief Stream operator for class
+ *
+ * @tparam T
+ * @param value
+ * @param another
+ * @return Class&
+ */
+template <typename T>
+Class &operator<<(Class &value, const T &another) {
   value.Add(another);
   return value;
 }
+/**
+ * @brief Stream operator for class access specifier
+ *
+ * @param value
+ * @param access_specifier
+ * @return Class&
+ */
 Class &operator<<(Class &value, AccessSpecifier access_specifier) {
   value.SetAccessSpecifier(access_specifier);
   return value;

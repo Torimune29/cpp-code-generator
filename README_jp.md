@@ -66,7 +66,7 @@ include/cppcodegen.h をダウンロード・インクルードするだけ
 ### ブロックとクラス
 
 ```cpp
-  cppcodegen::Snippet file_pre_main(cppcodegen::line_t);  // line as file pre main
+  cppcodegen::Snippet file_pre_main;  // default(line) as file pre main
   cppcodegen::Block s_function(cppcodegen::definition_t,
                                "void Print(const std::string &str)");  // block as function declaration/definition
   s_function << "str_= str;"
