@@ -35,7 +35,7 @@ int main(int /*argc*/, char** /*argv[]*/) {
              << "std::cout << str_ << std::endl";  // add function body
   cppcodegen::Class s_class("Test");               // Class
   s_class << cppcodegen::AccessSpecifier::kPublic << "Test() = default;"
-          << s_function;                                                    // add public member with function
+          << s_function;                                                    // add public member function and snippet
   s_class << cppcodegen::AccessSpecifier::kPrivate << "std::string str_;";  // add private member
 
   cppcodegen::Block s_namespace(cppcodegen::namespace_t, "TestNamespace");  // block as namespace
