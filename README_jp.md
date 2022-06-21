@@ -32,13 +32,13 @@
 
 ## 使い方
 
-### インストール方法
+## インストール方法
 
 include/cppcodegen.h をダウンロード・インクルードするだけ
 
-### ライブラリ方法
+## 使用方法
 
-#### スニペット
+### スニペット
 
 ```cpp
   cppcodegen::Snippet file_header(cppcodegen::line_t);                   // line as file header
@@ -63,7 +63,7 @@ include/cppcodegen.h をダウンロード・インクルードするだけ
   */
  ```
 
-#### ブロックとクラス
+### ブロックとクラス
 
 ```cpp
   cppcodegen::Snippet file_pre_main(cppcodegen::line_t);  // line as file pre main

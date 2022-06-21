@@ -30,15 +30,13 @@ Header-only code snippet generator for C++11
 
 For more information, see [unit tests](https://github.com/Torimune29/cppcodegen/blob/main/tests/unit_tests_cppcodegen.cpp)
 
-## How to use
-
-### How to install
+## How to install
 
 Just download and include include/cppcodegen.h
 
-### How to library
+## How to Use
 
-#### Snippet
+### Snippet
 
 ```cpp
   cppcodegen::Snippet file_header(cppcodegen::line_t);                   // line as file header
@@ -63,7 +61,7 @@ Just download and include include/cppcodegen.h
   */
  ```
 
-#### Block and Class
+### Block and Class
 
 ```cpp
   cppcodegen::Snippet file_pre_main(cppcodegen::line_t);  // line as file pre main
