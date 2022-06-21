@@ -8,8 +8,6 @@ namespace cppcodegen {
 
 const std::size_t kDefaultIndentSize = 2;
 
-// previous declaration
-
 typedef struct LineType {
   explicit LineType() = default;
 } LineType;
@@ -259,9 +257,8 @@ class Block {
 
   template <typename T>
   void Add(const T &any) noexcept {
-    Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
-    snippet_copy.Add(any);
-    snippets_.emplace_back(std::move(snippet_copy));
+    Snippet snippet_copy(Indent(indent_.level_ + 1, indent_.size_));
+    snippets_.emplace_back(std::move(snippet_copy << any));
     return;
   }
 
@@ -398,9 +395,8 @@ class Class {
 
   template <typename T>
   void Add(const T &any) noexcept {
-    Snippet snippet_copy(line_t, Indent(indent_.level_ + 1, indent_.size_));
-    snippet_copy.Add(any);
-    snippets_[now_specifier_].emplace_back(std::move(snippet_copy));
+    Snippet snippet_copy(Indent(indent_.level_ + 1, indent_.size_));
+    snippets_[now_specifier_].emplace_back(std::move(snippet_copy << any));
     return;
   }
 
