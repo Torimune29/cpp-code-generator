@@ -66,7 +66,7 @@ int main(int /*argc*/, char** /*argv[]*/) {
   std::cout << main_context.Out() << "------" << std::endl;
   /* std out is ...
     int main(int argc, char** argv[]) {
-    return 0
+      return 0
     }
   */
 
