@@ -27,13 +27,11 @@ var NAVTREE =
   [ "cppcodegen", "index.html", [
     [ "Features", "index.html#autotoc_md1", null ],
     [ "Example", "index.html#autotoc_md2", null ],
-    [ "How to use", "index.html#autotoc_md3", [
-      [ "How to install", "index.html#autotoc_md4", null ],
-      [ "How to library", "index.html#autotoc_md5", [
-        [ "Snippet", "index.html#autotoc_md6", null ],
-        [ "Block and Class", "index.html#autotoc_md7", null ]
-      ] ],
-      [ "Indenting", "index.html#autotoc_md8", null ]
+    [ "How to install", "index.html#autotoc_md3", null ],
+    [ "How to Use", "index.html#autotoc_md4", [
+      [ "Snippet", "index.html#autotoc_md5", null ],
+      [ "Block and Class", "index.html#autotoc_md6", null ],
+      [ "Indenting", "index.html#autotoc_md7", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

@@ -120,14 +120,12 @@ Features</h1>
 Example</h1>
 <p>For more information, see <a href="https://github.com/Torimune29/cppcodegen/blob/main/tests/unit_tests_cppcodegen.cpp">unit tests</a></p>
 <h1><a class="anchor" id="autotoc_md3"></a>
-How to use</h1>
-<h2><a class="anchor" id="autotoc_md4"></a>
-How to install</h2>
+How to install</h1>
 <p>Just download and include <a class="el" href="cppcodegen_8h.html">include/cppcodegen.h</a></p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+How to Use</h1>
 <h2><a class="anchor" id="autotoc_md5"></a>
-How to library</h2>
-<h3><a class="anchor" id="autotoc_md6"></a>
-Snippet</h3>
+Snippet</h2>
 <div class="fragment"><div class="line">  <a class="code" href="classcppcodegen_1_1_snippet.html">cppcodegen::Snippet</a> file_header(<a class="code" href="namespacecppcodegen.html#a6f2f453e300a03ac90cf866b4fcc13ff">cppcodegen::line_t</a>);                   <span class="comment">// line as file header</span></div>
 <div class="line">  <a class="code" href="classcppcodegen_1_1_snippet.html">cppcodegen::Snippet</a> s_system_include(<a class="code" href="namespacecppcodegen.html#a018d8b324306b2f7ab5c26623d7faf61">cppcodegen::system_include_t</a>);    <span class="comment">// system include directive</span></div>
 <div class="line">  <a class="code" href="classcppcodegen_1_1_snippet.html">cppcodegen::Snippet</a> s_local_include(<a class="code" href="namespacecppcodegen.html#af12f87590fcd9e95eab13a691c4f83b3">cppcodegen::local_include_t</a>, <span class="stringliteral">&quot;&quot;</span>);  <span class="comment">// local include directive</span></div>
@@ -152,8 +150,8 @@ Snippet</h3>
 <div class="ttc" id="anamespacecppcodegen_html_a018d8b324306b2f7ab5c26623d7faf61"><div class="ttname"><a href="namespacecppcodegen.html#a018d8b324306b2f7ab5c26623d7faf61">cppcodegen::system_include_t</a></div><div class="ttdeci">constexpr SystemIncludeType system_include_t</div><div class="ttdef"><b>Definition:</b> cppcodegen.h:31</div></div>
 <div class="ttc" id="anamespacecppcodegen_html_a6f2f453e300a03ac90cf866b4fcc13ff"><div class="ttname"><a href="namespacecppcodegen.html#a6f2f453e300a03ac90cf866b4fcc13ff">cppcodegen::line_t</a></div><div class="ttdeci">constexpr LineType line_t</div><div class="ttdef"><b>Definition:</b> cppcodegen.h:30</div></div>
 <div class="ttc" id="anamespacecppcodegen_html_af12f87590fcd9e95eab13a691c4f83b3"><div class="ttname"><a href="namespacecppcodegen.html#af12f87590fcd9e95eab13a691c4f83b3">cppcodegen::local_include_t</a></div><div class="ttdeci">constexpr LocalIncludeType local_include_t</div><div class="ttdef"><b>Definition:</b> cppcodegen.h:32</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
-Block and Class</h3>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+Block and Class</h2>
 <div class="fragment"><div class="line">  <a class="code" href="classcppcodegen_1_1_snippet.html">cppcodegen::Snippet</a> file_pre_main(<a class="code" href="namespacecppcodegen.html#a6f2f453e300a03ac90cf866b4fcc13ff">cppcodegen::line_t</a>);  <span class="comment">// line as file pre main</span></div>
 <div class="line">  <a class="code" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a> s_function(<a class="code" href="namespacecppcodegen.html#a00f16d1fbcc58ae0b17c4a6fec354731">cppcodegen::definition_t</a>,</div>
 <div class="line">                               <span class="stringliteral">&quot;void Print(const std::string &amp;str)&quot;</span>);  <span class="comment">// block as function declaration/definition</span></div>
@@ -191,7 +189,7 @@ Block and Class</h3>
 <div class="ttc" id="anamespacecppcodegen_html_a47a51abcf04215b3f49a5333b1e20825"><div class="ttname"><a href="namespacecppcodegen.html#a47a51abcf04215b3f49a5333b1e20825">cppcodegen::namespace_t</a></div><div class="ttdeci">constexpr NamespaceType namespace_t</div><div class="ttdef"><b>Definition:</b> cppcodegen.h:35</div></div>
 <div class="ttc" id="anamespacecppcodegen_html_ac1003fe6b06e79e4e954d9bb1c19f9aba23f56d95d0068609bb9b60b62af3a054"><div class="ttname"><a href="namespacecppcodegen.html#ac1003fe6b06e79e4e954d9bb1c19f9aba23f56d95d0068609bb9b60b62af3a054">cppcodegen::AccessSpecifier::kPrivate</a></div><div class="ttdeci">@ kPrivate</div></div>
 <div class="ttc" id="anamespacecppcodegen_html_ac1003fe6b06e79e4e954d9bb1c19f9aba8576a54b49c65252099050c24aa98095"><div class="ttname"><a href="namespacecppcodegen.html#ac1003fe6b06e79e4e954d9bb1c19f9aba8576a54b49c65252099050c24aa98095">cppcodegen::AccessSpecifier::kPublic</a></div><div class="ttdeci">@ kPublic</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
 Indenting</h2>
 <div class="fragment"><div class="line"><a class="code" href="classcppcodegen_1_1_block.html">cppcodegen::Block</a> main_context(<a class="code" href="namespacecppcodegen.html#a00f16d1fbcc58ae0b17c4a6fec354731">cppcodegen::definition_t</a>,</div>
 <div class="line">                               <span class="stringliteral">&quot;int main(int argc, char**argv[])&quot;</span>);  <span class="comment">// main context codeblock</span></div>
