@@ -4,6 +4,7 @@ var classcppcodegen_1_1_snippet =
     [ "Snippet", "classcppcodegen_1_1_snippet.html#aa19e3f2cf4cec273f6575486212d9508", null ],
     [ "Snippet", "classcppcodegen_1_1_snippet.html#af239e51881182f3c4809258d59135ddd", null ],
     [ "~Snippet", "classcppcodegen_1_1_snippet.html#ae33fbcf74ba5ad05de95cc03a9dce641", null ],
+    [ "Add", "classcppcodegen_1_1_snippet.html#af994494e30a0d353510573ab2d0cf57d", null ],
     [ "Add", "classcppcodegen_1_1_snippet.html#a9fdcb780e57f7b2ad65016369d3fd962", null ],
     [ "Add", "classcppcodegen_1_1_snippet.html#af0e3e50d66448cf291de795b73eb7a76", null ],
     [ "Add", "classcppcodegen_1_1_snippet.html#acb40d12ffd4955eb939d9c3b23ca2566", null ],

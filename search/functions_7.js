@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['namespacetype_77',['NamespaceType',['../structcppcodegen_1_1_namespace_type.html#aa057724b62cd68527c508a603fc03c99',1,'cppcodegen::NamespaceType']]]
+  ['namespacetype_79',['NamespaceType',['../structcppcodegen_1_1_namespace_type.html#aa057724b62cd68527c508a603fc03c99',1,'cppcodegen::NamespaceType']]]
 ];

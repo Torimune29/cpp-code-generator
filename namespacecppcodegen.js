@@ -31,6 +31,7 @@ var namespacecppcodegen =
       [ "kNamespace", "namespacecppcodegen.html#a366db303fbd794f24098f82f3a154f0aaa28886f1e6b46d18364aa513e58413c7", null ]
     ] ],
     [ "operator<<", "namespacecppcodegen.html#a979b19d23d78a1b6939866b6ba45f5d1", null ],
+    [ "operator<<", "namespacecppcodegen.html#aea4f7490ce8fedb58155dcdc17d0a37d", null ],
     [ "operator<<", "namespacecppcodegen.html#acf2571e1562042d2ca0085a12710b555", null ],
     [ "operator<<", "namespacecppcodegen.html#a48bfd850daa246591ec025dc1327232b", null ],
     [ "code_block_t", "namespacecppcodegen.html#a7838760f24938134984374a6ecaa01fc", null ],
